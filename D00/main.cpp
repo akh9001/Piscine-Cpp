@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stdio.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 12:29:50 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/04 15:31:48 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/10/04 16:02:25 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/10/04 17:50:41 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Sample.class.hpp"
 
-int	main(void)
+int main(void)
 {
-	char	buff[500];
-	int		age;
-	char	permission;
+	Sample	instance;
 
-	std::cout << "Hello Asmaa!" <<std::endl;
-	std::cout << "Input a world : ";
-	std::cin >> buff >> age >> permission;
-	std::cout << "You entered: [" << buff << "]"<< "[" << age << "]"<< "[" << permission << "]"<< std::endl;
+	// instance.foo = 42;
+	// std::cout << "Instance.foo : " << instance.foo << std::endl;
+	// instance.bar();
+	return 0;
 }
