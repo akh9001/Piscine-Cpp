@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sample.class.hpp                                   :+:      :+:    :+:   */
+/*   Sample2.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 15:35:13 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/05 09:45:32 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/10/04 19:51:23 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/10/04 20:20:32 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SAMPLE_CLASS_H
-# define SAMPLE_CLASS_H
+#ifndef SAMPLE2_CLASS_H
+# define SAMPLE2_CLASS_H
 # include <iostream>
 
 //Declaration de la classe & fonction, attributs
 
-class Sample
+class Sample2
 {
 	public:
 	
-		float const pi;
-		int			qd; //Attribut membre
+		char	a1; //Attribut membre
+		int		a2; //Attribut membre
+		float	a3; //Attribut membre
 	
-		Sample(float const f); //Constucteur
-		~Sample(void);//Descructeur
-		void	bar(void) const;
-		// La fonction membre, bar, ne modifira jamais l instance courante.
-		// Autrement dit, all kind of assignation to the courant
-		// instance is not allowed !
+		Sample2(char p1, int p2, float p3); //Constucteur
+		~Sample2(void);//Descructeur
+		void	bar(void);
 };
+
 #endif

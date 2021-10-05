@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sample.class.hpp                                   :+:      :+:    :+:   */
+/*   Sample.visibility.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 15:35:13 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/05 09:45:32 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/10/05 10:43:29 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/10/05 14:02:37 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SAMPLE_CLASS_H
-# define SAMPLE_CLASS_H
+#ifndef SAMPLE_VISIBILITY_HPP
+# define SAMPLE_VISIBILITY_HPP
 # include <iostream>
 
-//Declaration de la classe & fonction, attributs
-
-class Sample
+class Visibility
 {
-	public:
+public:
 	
-		float const pi;
-		int			qd; //Attribut membre
+	int		publicfoo;
+		
+	Visibility(void);
+	~Visibility(void);
+
+	void	publicBar(void);
+	void	setPrivateFoo(int v);
+	int		getPrivateFoo(void) const;
+	int		compare(Visibility * other) const;
+
+private:
+
+	int		_privateFoo;
 	
-		Sample(float const f); //Constucteur
-		~Sample(void);//Descructeur
-		void	bar(void) const;
-		// La fonction membre, bar, ne modifira jamais l instance courante.
-		// Autrement dit, all kind of assignation to the courant
-		// instance is not allowed !
+	void	_privateBar(void) const;
 };
+
 #endif
