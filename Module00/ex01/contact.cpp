@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:43:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/08 09:53:36 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/08 19:33:13 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,48 @@ Contact::~Contact()
 
 void	Contact::display_contact(void)
 {
-	std::cout << "First Name : " << this->_firstname << std::endl;
-	std::cout << "Last Name : " << this->_lastname << std::endl;
-	std::cout << "Nickname : " << this->_nickname << std::endl;
-	std::cout << "Phone Number : " << this->_phone_number << std::endl;
-	std::cout << "Darkest Secret : " << this->_darkest_secret << std::endl;
+	cout << "First Name : " << this->_firstname << endl;
+	cout << "Last Name : " << this->_lastname << endl;
+	cout << "Nickname : " << this->_nickname << endl;
+	cout << "Phone Number : " << this->_phone_number << endl;
+	cout << "Darkest Secret : " << this->_darkest_secret << endl;
 }
 
 void	Contact::set_contact(void)
 {
-	std::cout << "First Name :" << std::endl;
-	std::getline(std::cin, this->_firstname);
-	std::cout << "Last Name :" << std::endl;
-	std::getline(std::cin, this->_lastname);
-	std::cout << "Nickname :" << std::endl;
-	std::getline(std::cin, this->_nickname);
-	std::cout << "Phone Number :" << std::endl;
-	std::getline(std::cin, _phone_number);
-	std::cout << "Darkest Secret :" << std::endl;
-	std::getline(std::cin, this->_darkest_secret);
+	cout << "First Name :" << endl;
+	getline(cin, this->_firstname);
+	cout << "Last Name :" << endl;
+	getline(cin, this->_lastname);
+	cout << "Nickname :" << endl;
+	getline(cin, this->_nickname);
+	cout << "Phone Number :" << endl;
+	getline(cin, _phone_number);
+	cout << "Darkest Secret :" << endl;
+	getline(cin, this->_darkest_secret);
+}
+
+string	str_wide_10(string	str)
+{
+	int		len;
+
+	len = str.size();
+	if (len >= 10)
+	{
+		str = str.substr(0, 10);
+		str[9] = '.';			
+	}
+	return (str);
+}
+
+void	Contact::print_contact_fields(void) const
+{
+	string	str;
+	
+	str = str_wide_10(this->_firstname);
+	cout << setw(10) << str << "|";
+	str = str_wide_10(this->_lastname);
+	cout << setw(10) << str << "|";
+	str = str_wide_10(this->_nickname);
+	cout << setw(10) << str << endl;
 }
