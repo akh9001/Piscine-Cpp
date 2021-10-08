@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:43:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/07 17:22:37 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/08 09:53:36 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Contact::~Contact()
 	return ;
 }
 
-void	Contact::get_contact(void)
+void	Contact::display_contact(void)
 {
 	std::cout << "First Name : " << this->_firstname << std::endl;
 	std::cout << "Last Name : " << this->_lastname << std::endl;

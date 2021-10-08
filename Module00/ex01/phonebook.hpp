@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:34:36 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/07 17:29:37 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/08 09:53:59 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Contact
 		Contact();
 		~Contact(void);
 		void	set_contact(void);
-		void	get_contact(void);
+		void	display_contact(void);
 		
 	private:
 		std::string		_firstname;
@@ -37,7 +37,7 @@ class Phonebook
 		Phonebook();
 		~Phonebook();
 		void			add(void);
-		void			get_all_contact() const;
+		void			display_list_contact(void) const;
 		void			search(void) const;
 		static int		get_total_cont(void);
 	private:
