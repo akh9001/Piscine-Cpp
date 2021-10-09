@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:43:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/08 19:33:13 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/09 13:46:43 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Contact::~Contact()
 	return ;
 }
 
-void	Contact::display_contact(void)
+void	Contact::display_contact(void) const
 {
 	cout << "First Name : " << this->_firstname << endl;
 	cout << "Last Name : " << this->_lastname << endl;
@@ -33,15 +33,15 @@ void	Contact::display_contact(void)
 
 void	Contact::set_contact(void)
 {
-	cout << "First Name :" << endl;
+	cout << "First Name : ";
 	getline(cin, this->_firstname);
-	cout << "Last Name :" << endl;
+	cout << "Last Name : ";
 	getline(cin, this->_lastname);
-	cout << "Nickname :" << endl;
+	cout << "Nickname : ";
 	getline(cin, this->_nickname);
-	cout << "Phone Number :" << endl;
+	cout << "Phone Number : ";
 	getline(cin, _phone_number);
-	cout << "Darkest Secret :" << endl;
+	cout << "Darkest Secret : ";
 	getline(cin, this->_darkest_secret);
 }
 
@@ -67,5 +67,5 @@ void	Contact::print_contact_fields(void) const
 	str = str_wide_10(this->_lastname);
 	cout << setw(10) << str << "|";
 	str = str_wide_10(this->_nickname);
-	cout << setw(10) << str << endl;
+	cout << setw(10) << str << "|" << endl;
 }
