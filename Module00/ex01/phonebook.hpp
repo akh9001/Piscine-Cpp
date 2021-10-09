@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:34:36 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/09 14:04:41 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/09 16:33:42 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,4 @@ class Phonebook
 };
 
 string					str_wide_10(string	str);
+int						is_number(string str);

@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:29:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/09 13:38:31 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/09 17:36:45 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 	cout << WHITE << "Available commands : " << "SEARCH, " << "ADD, " << "EXIT.";
 	cout << DEFAULT << endl;
 	
-	while (!cin.eof())
+	while (1)
 	{
 		cout << GREEN << " Enter your command  > " << DEFAULT;
 		getline(cin, cmd);

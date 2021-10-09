@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:43:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/09 13:46:43 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/09 17:35:17 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,50 @@ Contact::~Contact()
 
 void	Contact::display_contact(void) const
 {
-	cout << "First Name : " << this->_firstname << endl;
-	cout << "Last Name : " << this->_lastname << endl;
-	cout << "Nickname : " << this->_nickname << endl;
-	cout << "Phone Number : " << this->_phone_number << endl;
-	cout << "Darkest Secret : " << this->_darkest_secret << endl;
+	cout << "	First Name : " << this->_firstname << endl;
+	cout << "	Last Name : " << this->_lastname << endl;
+	cout << "	Nickname : " << this->_nickname << endl;
+	cout << "	Phone Number : " << this->_phone_number << endl;
+	cout << "	Darkest Secret : " << this->_darkest_secret << endl;
+}
+
+int		check_required_str_field(string	&str,string msg, string err)
+{
+	int	n;
+
+	n = -1;
+	do
+	{
+		n++;
+		if (!n)
+			cout << msg;
+		else
+			cout << RED << err << DEFAULT;
+	}
+	while (getline(cin, str) && str.empty());
+	return (0);
 }
 
 void	Contact::set_contact(void)
 {
-	cout << "First Name : ";
-	getline(cin, this->_firstname);
-	cout << "Last Name : ";
-	getline(cin, this->_lastname);
+	string	err;
+
+	err = "Required field! Please, enter First Name : ";
+	if (check_required_str_field(this->_firstname, "First Name : ", err))
+		return ;
+	err = "Required field! Please, enter Last Name : ";
+	if (check_required_str_field(this->_lastname, "Last Name : ", err))
+		return ;
 	cout << "Nickname : ";
 	getline(cin, this->_nickname);
-	cout << "Phone Number : ";
-	getline(cin, _phone_number);
+	err = "Required field! Please, enter Phone Number : ";
+	if (check_required_str_field(this->_phone_number, "Phone Number : ", err))
+		return ;
+	while (is_number(this->_phone_number))
+	{
+		cout << RED << "Wrong phone Number! Please, enter a valid Phone Number : " << DEFAULT;
+		getline(cin, this->_phone_number);
+	}
 	cout << "Darkest Secret : ";
 	getline(cin, this->_darkest_secret);
 }
