@@ -6,11 +6,14 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:34:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/09 17:39:39 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/10 16:47:55 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+# include "phonebook.hpp"
+
+
+//Initialisation d attribut non membre (static var in a class)
 
 int	Phonebook::_total_cont = -1;
 int	Phonebook::_last_entry = -1;
@@ -58,46 +61,6 @@ void	Phonebook::display_list_contact(void) const
 		i++;
 	}
 	cout << endl;
-}
-
-int		is_number(string str)
-{
-	int		i;
-
-	i = 1;
-	if (!isdigit(str[0]) && str[0] != '+')
-		return (1);
-	while (str[i])
-	{
-		if (!isdigit(str[i]))
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int		check_index(string	&index, int _last_entry)
-{
-	int		in;
-
-	while (getline(cin, index) && index.empty());
-	if (is_number(index))
-	{
-		cout << YELLOW  << "Wrong index, please enter a number : " << DEFAULT;
-		return (1);
-	}
-	in = stoi(index);
-	if (!(in >= 0 && in <= 7))
-	{
-		cout << YELLOW  << "Wrong index, please enter an index between 0 && 7 : " << DEFAULT;
-		return (1);
-	}	
-	if (in > _last_entry)
-	{
-		cout << YELLOW  << "Wrong index, please enter an available index between 0 && " << _last_entry << " : " << DEFAULT;
-		return (1);
-	}	
-	return (0);	
 }
 
 void	Phonebook::search(void) const
