@@ -6,54 +6,94 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 20:22:51 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/10 21:56:57 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/11 14:00:41 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <ctime>
+#include <time.h>
 # define cin		std::cin
 # define cout		std::cout
 # define endl		std::endl
 # define string		std::string
 
 // Initialize static var
-	t::int	_nbAccounts = -1;
-	t::int	_totalAmount = 0;
-	t::int	_totalNbDeposits = 0;
-	t::int	_totalNbWithdrawals = 0;
+int		Account::_nbAccounts = 0;
+int		Account::_totalAmount = 0;
+int		Account::_totalNbDeposits = 0;
+int		Account::_totalNbWithdrawals = 0;
 
-t::Account(initial_deposit)
+
+
+Account::Account(int initial_deposit)
 {
+	_accountIndex = _nbAccounts;
+	_totalAmount += initial_deposit;
 	_nbAccounts++;
-	
+	_amount = initial_deposit;
+	_nbDeposits = 0;
+	_nbWithdrawals = 0;
+	_displayTimestamp();
+	cout << "index:" << _accountIndex;
+	cout << "amount:" << _amount <<";created" << endl;
 }
 
-t::~Account(void)
+Account::~Account(void)
 {
-	//??
+	_displayTimestamp();
+	cout << "index:" << _accountIndex;
+	cout << "amount:" << _amount <<";closed" << endl;	
 }
 
-t::static int	getNbAccounts( void )
+int	Account::getNbAccounts( void )
 {
 	return (_nbAccounts);
 }
-t::static int	getTotalAmount( void )
+int	Account::getTotalAmount( void )
 {
 	return (_totalAmount);
 }
-t::static int	getNbDeposits( void )
+int	Account::getNbDeposits( void )
 {
 	return (_totalNbDeposits);
 }
-t::static int	getNbWithdrawals( void )
+int	Account::getNbWithdrawals( void )
 {
 	return (_totalNbWithdrawals);
 }
-t::static void	displayAccountsInfos( void )
+void	Account::displayStatus( void ) const
 {
-	int	i = 0;
-	while (i <= _nbAccounts)
 	cout << "[19920104_091532]" << "index:" << _accountIndex;
 	cout << "amount:" << _amount <<";created" << endl;
 }
+
+void	Account::displayAccountsInfos(void) // Static function ????
+{
+
+	cout << "accounts:" << _nbAccounts;
+	cout << "total:" << _totalAmount;
+	cout <<"deposits:" << _totalNbDeposits;
+	cout <<"withdrawals:" << _totalNbWithdrawals;
+	cout << endl;
+}
+
+void	Account::_displayTimestamp( void )
+{
+	struct tm	*tim;
+	const time_t var = time(0);
+
+	tim = localtime(&var);
+	cout << "["<< tim->tm_year + 1900 << tim->tm_mon + 1 << tim->tm_mday << "_";
+	cout << tim->tm_hour;
+	cout << tim->tm_min;
+	cout << tim->tm_sec;
+	cout << "] ";	
+}
+
+void	Account::makeDeposit(int deposit)
+{
+	_amount += deposit;
+}
+bool	Account::makeWithdrawal( int withdrawal )
+int		Account::checkAmount( void ) const

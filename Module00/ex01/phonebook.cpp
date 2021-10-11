@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:34:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/10 16:47:55 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/11 13:30:02 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	Phonebook::display_list_contact(void) const
 	i = 0;
 	cout << endl << WHITE << setw(11) << "Index|" << setw(11) << "First Name|";
 	cout << setw(11) << "Last Name|" << setw(11) << "Nickname|" << DEFAULT << endl;
-	while (i < 8)
+	while (i <= _last_entry)
 	{
 		cout << setw(10) << i << "|";
 		_contact[i].print_contact_fields();
