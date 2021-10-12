@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/07 09:32:34 by akhalidy          #+#    #+#              #
-#    Updated: 2021/10/12 17:46:20 by akhalidy         ###   ########.fr        #
+#    Created: 2021/10/12 17:43:34 by akhalidy          #+#    #+#              #
+#    Updated: 2021/10/12 17:47:39 by akhalidy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-NAME = phonebook
+NAME = accouts
 
-SRCS = phonebook.cpp contact.cpp help_functions.cpp main.cpp 
+SRCS = Account.cpp tests.cpp
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
