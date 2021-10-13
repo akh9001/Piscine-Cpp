@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 16:17:03 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/12 18:55:33 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/10/13 11:48:14 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/10/13 21:22:51 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# pragma once
-# include "main_header.hpp"
+#include "Zombie.hpp"
 
-class Contact
+int		main(void)
 {
-	public:
-		Contact();
-		~Contact(void);
-		void		set_contact(void);
-		void		display_contact(void) const;
-		void		print_contact_fields(void) const;
+	int		N;
+	string	name;
+	Zombie	*zombies;
 
-	private:
-		string		_firstname;
-		string		_lastname;
-		string		_nickname;
-		string		_phone_number;
-		string		_darkest_secret;
-};
+	N = 5;
+	name = "ZOOMBIE";
+	zombies = zombieHorde(N, name);
+	// Let s the zombies annouce their selves.
+	for (int i = 0; i < N; i++)
+	{
+		cout << i << " - ";
+		zombies[i].announce();
+	}
+	// Delete zombies :
+	delete [] zombies;
+	return (0);
+}

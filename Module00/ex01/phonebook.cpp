@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:34:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/11 13:30:02 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/12 18:42:22 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		Phonebook::_set_total_cont()
 {
 	_total_cont++;
 	if (_total_cont > 7)
-		_last_entry = 8;
+		_last_entry = 7;
 	else
 		_last_entry = _total_cont;
 	return (_total_cont);

@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_header.hpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 16:27:53 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/12 19:07:36 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/10/13 12:07:41 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/10/13 20:00:46 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# pragma once
+#pragma once
 # include <iostream>
-# include <iomanip>
 # include <string>
 # define cin		std::cin
 # define cout		std::cout
 # define endl		std::endl
-# define setw		std::setw
-# define stoi		std::stoi
-# define isdigit	std::isdigit
 # define string		std::string
-# define getline	std::getline
-# define GREEN 		"\e[1;32m"
-# define RED 		"\e[1;31m"
-# define WHITE 		"\e[1;37m"
-# define YELLOW 	"\e[1;33m"
-# define BLUE 		"\e[1;34m"
-# define PURPLE 	"\033[1;35m"
-# define DEFAULT	"\e[0;37m"
 
-// Help Function
+class	Zombie
+{
+		string	_name;
+	public :
+		Zombie(void);
+		~Zombie(void);
+		Zombie(string name);
+		void	announce(void) const;
+		void	set_name(string name);
+		string	get_name(void) const;
+		
+};
 
-int				is_number(string str);
-string			str_wide_10(string	str);
-int				check_required_str_field(string	&str,string msg, string err);
-int				check_index(string	&index, int _last_entry);
+Zombie* newZombie(string name);
+void randomChump(string name);
