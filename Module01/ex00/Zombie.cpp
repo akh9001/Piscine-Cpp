@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 19:42:37 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/13 19:51:01 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/14 11:25:41 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Zombie::~Zombie(void)
 Zombie::Zombie(string name)
 {
 	_name = name;
+	announce();
 	return ;
 }
 

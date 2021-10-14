@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:48:44 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/14 11:25:56 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/10/14 12:48:00 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/10/14 16:12:48 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-void randomChump(string name)
+int main(void)
 {
-	Zombie	zombie(name);
+	Weapon club = Weapon("crude spiked club");
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("some other type of club");
+	bob.attack();
+	return(0);
 }

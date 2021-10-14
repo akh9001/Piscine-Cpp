@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 19:45:18 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/13 20:34:09 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/14 11:27:33 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		main(void)
 	Zombie	*zombie;
 
 	// Create a zombie on the heap 
-	
-	//
-	
+		zombie = newZombie("Ghoul");
+	// Createzombie on the stack
+		randomChump("Head");
 	// Delete zombie :
 	delete zombie;
 	return (0);
