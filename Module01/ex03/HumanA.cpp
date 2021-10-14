@@ -6,13 +6,13 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 15:07:57 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/14 17:12:55 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/14 19:26:48 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(string name, Weapon& wp) :  _name(name), _wp(wp)
+HumanA::HumanA(string name, Weapon& type) :  _wp(type), _name(name)
 {
 	cout << "HumanA : "<< this->getName() <<" was created !" << endl;
 	return ;
@@ -29,15 +29,14 @@ string		HumanA::getName(void) const
 	return (_name);
 }
 
-Weapon		HumanA::getWpType(void) const
-{
-	return(_wp);
-}
-
-void		HumanA::setName(string name, Weapon wp)
+void		HumanA::setName(string name)
 {
 	_name = name;
-	_wp = wp;
+}
+
+Weapon&		HumanA::getWeapon(void) const
+{
+	return (_wp);
 }
 
 void		HumanA::attack(void) const

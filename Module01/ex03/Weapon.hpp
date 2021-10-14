@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 11:50:39 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/14 17:11:38 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/14 19:03:28 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 class Weapon
 {
 	private:
-		string	_weapon;
+		string	_type;
 	public:
 		Weapon(string type);
 		~Weapon(void);
 		const string&	getType(void) const;
-		void			setType(string weapon);
+		void			setType(string type);
 };

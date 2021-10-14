@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 12:42:02 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/14 16:37:47 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/14 19:07:54 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@
 class HumanA
 {
 	private:
-		Weapon	_wp;
+		Weapon&	_wp;
 		string	_name;
 	public:
 		HumanA(string name, Weapon& wp);
 		~HumanA(void);
 		string	getName(void) const;
-		Weapon	getWpType(void) const;
-		void	setName(string name, Weapon wp);
-		void	setWpType(string name, Weapon wp);
-		void	setType(string weapon);
+		Weapon&	getWeapon(void) const;
+		void	setName(string name);
 		void	attack(void) const;
 };
