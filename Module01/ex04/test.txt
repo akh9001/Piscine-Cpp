@@ -1,0 +1,16 @@
+The authors present the concept and implementation of the keyword
+occurrence analysis that is based on the separate counting of (key)words in
+the four main parts of scientific and other types of articles: the title—followed
+by a list of authors, abstract, list of keywords, and the main text. Also, the
+analysis is meant to be applied to more than one article at once. As such, it
+can serve the researchers, writers, editors, and others for the reviewing and
+statistical exploration of the articles. For discrimination of the article parts, the
+already existing, implicit tagging must be minimally assisted by the user. That
+
+
+is to be done on collection and conversion of the texts in one or more txt-
+format input files. The proposed analysis of keywords occurrences is
+implemented in a web-based PHP – MySQL application. It is already used for
+the practical testing and provides a basis for the future improvements.
+Keywords: article structure, in-text tagging, keyword counting, keyword
+occurrence analyzer.

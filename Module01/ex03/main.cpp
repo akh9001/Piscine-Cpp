@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 12:48:00 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/14 19:28:37 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/15 08:30:17 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(void)
 	}
 	
 	{
+		cout << endl << endl;
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
 		jim.setWeapon(club);
