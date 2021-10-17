@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 17:20:07 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/17 18:22:37 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/10/17 18:44:21 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/10/17 18:49:25 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-# include <iostream>
-# include <string>
-# define cin	std::cin
-# define cout	std::cout
-# define endl	std::endl
-# define string	std::string
+#include "Karen.hpp"
 
-class	Karen
+int	main(void)
 {
-	private :
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
-	public :
-		void	complain(string level);
-};
+	Karen	karen;
+
+	karen.complain("INFO");
+	karen.complain("DEBUG");
+	karen.complain("ERROR");
+	karen.complain("WARNING");
+	return (0);
+}
