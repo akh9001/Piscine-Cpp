@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 18:24:23 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/17 21:22:03 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/10/18 10:31:18 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ void	Karen::debug(void)
 	cout << "[ DEBUG ]" << endl; 
 	cout << "I love to get extra bacon ";
 	cout << "for my 7XL-double-cheese-triple-pickle-special-ketchup burger.";
-	cout << " I just love it!" << endl;
+	cout << endl << "I just love it!" << endl;
 }
 
 void	Karen::info(void)
 {
 	cout << "[ INFO ]" << endl; 
 	cout << "I cannot believe adding extra bacon cost more money.";
-	cout << "You don’t put enough! If you did ";
-	cout << "I would not have to ask for it!" << endl;
+	cout << "You don’t put enough!" << endl;
+	cout << "If you did I would not have to ask for it!" << endl;
 }
 
 void	Karen::warning(void)
 {
 	cout << "[ WARNING ]" << endl; 
-	cout << "I think I deserve to have some extra bacon for free.";
-	cout << " I’ve been coming here for years and you just started";
+	cout << "I think I deserve to have some extra bacon for free." << endl;
+	cout << "I’ve been coming here for years and you just started";
 	cout << " working here last month." << endl;
 }
 
@@ -76,6 +76,6 @@ void	Karen::complain(string level)
 		case ERROR : error();
 					break;
 		default :
-			cout << "[ Probably complaining about insignificant problems ]";
+			cout << "[ Probably complaining about insignificant problems ]" << endl;
 	}
 }
