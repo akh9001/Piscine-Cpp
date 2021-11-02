@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 19:08:56 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/01 16:26:35 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/01 21:30:11 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,41 +97,38 @@ Fixed	Fixed::operator/(Fixed const & rhs)
 
 bool	Fixed::operator>(Fixed const & rhs)
 {
-	return (this->_nBit > rhs._nBit);
+	return (this->_value > rhs._value);
 }
 
 bool	Fixed::operator<(Fixed const & rhs)
 {
-	return (this->_nBit < rhs._nBit);
+	return (this->_value < rhs._value);
 }
 
 bool	Fixed::operator>=(Fixed const & rhs)
 {
-	return (this->_nBit >= rhs._nBit);
+	return (this->_value >= rhs._value);
 }
 
 bool	Fixed::operator<=(Fixed const & rhs)
 {
-	return (this->_nBit <= rhs._nBit);
+	return (this->_value <= rhs._value);
 }
 
 bool	Fixed::operator==(Fixed const & rhs)
 {
-	return (this->_nBit == rhs._nBit);
+	return (this->_value == rhs._value);
 }
 
 bool	Fixed::operator!=(Fixed const & rhs)
 {
-	return (this->_nBit != rhs._nBit);
+	return (this->_value != rhs._value);
 }
 
 Fixed Fixed::operator++(void)
 {
-	// ++_value;
-	// return(*this);
-	Fixed tmp;
-    tmp._value = ++_value;
-    return tmp;
+	++_value;
+	return(*this);
 }
 
 Fixed Fixed::operator--(void)
@@ -143,6 +140,7 @@ Fixed Fixed::operator--(void)
 Fixed Fixed::operator++(int)
 {
 	Fixed	tmp;
+
 	tmp = *this;
 	_value++;
 	return(tmp);
@@ -150,7 +148,9 @@ Fixed Fixed::operator++(int)
 
 Fixed Fixed::operator--(int)
 {
-	Fixed	tmp = *this; 
+	Fixed	tmp;
+
+	tmp = *this;
 	_value--;
 	return(tmp);
 }

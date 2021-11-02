@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:06:02 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/01 22:02:07 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:17:28 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ bool bsp( Point const a, Point const b, Point const c, Point const x)
 	Fixed	C = Area(a, x,c);
 	Fixed	D = Area(x, b,c);
 	
-	return (((B + C + D) <= A));
-	// A = (1/2) * (x1 (y2 – y3 ) + x2 (y3 – y1 ) + x3(y1 – y2));
+	return (B != 0 && C != 0 && D != 0 && ((B + C + D) <= A));
 }

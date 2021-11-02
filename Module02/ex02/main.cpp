@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 19:37:04 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/01 20:33:29 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/01 20:56:40 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int main( void )
 	Fixed d(5.4f);
 	Fixed e(0.5f);
 	Fixed  b( Fixed( 5.05f ) * Fixed( 2 ) );
-	// cout << b << endl;
+
+	cout << b << endl;
 	cout << a << endl;
 	cout << ++a << endl;
 	cout << a << endl;

@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:04:06 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/01 22:05:31 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/02 12:16:04 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 Point::Point(void) : x(0), y(0)
 {
-	cout << "Default constructor called" << endl;
+	// cout << "Default constructor called" << endl;
 	return;
 }
 
@@ -24,7 +24,7 @@ Point::Point(void) : x(0), y(0)
 
 Point::Point(Point const & src): x(src.x), y(src.y)
 {
-	cout << "Copy constructor called" << endl;
+	// cout << "Copy constructor called" << endl;
 	return;
 }
 
@@ -47,5 +47,5 @@ Fixed Point::get_y(void) const
 
 Point::~Point()
 {
-	cout << "Destructor called" << endl;
+	// cout << "Destructor called" << endl;
 }
