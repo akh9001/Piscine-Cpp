@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:06:02 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/02 11:17:28 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/03 13:05:17 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 
 Fixed Area(Point const a, Point const b, Point const c)
 {
-	return (
-		Fixed(0.5f) * (a.get_x() * (b.get_y() - c.get_y()) + b.get_x() * (c.get_y() - a.get_y()) + c.get_x() * (a.get_y() - b.get_y()))
-	);
+	Fixed	X;
+	
+	X = Fixed(0.5f) * (a.get_x() * (b.get_y() - c.get_y()) + b.get_x() * (c.get_y() - a.get_y()) + c.get_x() * (a.get_y() - b.get_y()));
+	return (X < 0 ? (X * Fixed(-1)) : X);
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const x)
@@ -28,6 +29,6 @@ bool bsp( Point const a, Point const b, Point const c, Point const x)
 	Fixed	B = Area(a, b, x);
 	Fixed	C = Area(a, x,c);
 	Fixed	D = Area(x, b,c);
-	
-	return (B != 0 && C != 0 && D != 0 && ((B + C + D) <= A));
+
+	return (B != 0 && C != 0 && D != 0 && ((B + C + D) == A));
 }
