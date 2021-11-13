@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:59:30 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/08 21:37:56 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/13 02:09:59 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int		main(void)
 	cout << "Energy points : " << p1.get_energyPoints() << endl;
 	cout << "Attack damage : " << p1.get_attackDamage() << endl << endl;
 	
-	ScavTrap	p3("player_3");
-	
 	cout << "\n######Testing a player from ScavTrap class :#######\n" << endl;
+	
+	ScavTrap	p3("player_3");
 	p3.attack(p1.get_name());
 	p3.takeDamage(120);
 	p3.beRepaired(200);

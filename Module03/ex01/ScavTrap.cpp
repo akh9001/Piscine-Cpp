@@ -6,13 +6,13 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:41:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/08 20:52:03 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/13 02:05:19 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) 
 {
 	cout << "ScavTrap::Default contructor called" << endl;
 	_name = "Anonymous";
