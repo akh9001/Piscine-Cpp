@@ -6,18 +6,18 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:53:23 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/10 16:04:18 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/13 20:03:42 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "ClapTrap.hpp"
 
-class Fragtrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
-		Fragtrap(void);
-		Fragtrap(string const &name);
-		void	highFivesGuys(void);	
-		~Fragtrap(void);
+		FragTrap(void);
+		FragTrap(string const &name);
+		void	highFivesGuys(void);
+		~FragTrap(void);
 };

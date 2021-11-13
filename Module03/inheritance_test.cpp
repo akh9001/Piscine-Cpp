@@ -215,30 +215,47 @@ public:
     virtual void function2() {cout << "Base:: f2"<< endl;};
 };
 
-class D1: public Base
+class D1:  virtual public Base
 {
 public:
-    virtual void function1() {cout << "D1:: f1"<< endl;};
+    void function1() {cout << "D1:: f1"<< endl;};
 };
 
-class D2: public Base
+class D2:  virtual public Base
 {
 public:
-    virtual void function2() {cout << "D2:: f2"<< endl;};
+    void function2() {cout << "D2:: f2"<< endl;};
 };
+
+class D3: public D1, public D2
+{
+public:
+    void function1() {cout << "D3:: f1"<< endl;};
+    void function2() {cout << "D3:: f2"<< endl;};
+};
+
 int main()
 {
-    D1	d1;
-	D2	d2;
-    Base* dPtr = &d1;
+    // D1	d1;
+	// D2	d2;
+    // Base* dPtr = &d1;
+    // dPtr->function1();
+    // dPtr->function2();
+	// dPtr = &d2;
+	// dPtr->function1();
+    // dPtr->function2();
+
+	// Base b;
+    // Base* bPtr = &b;
+	// cout << "########" << endl;
+    // bPtr->function1();
+	D1	d3;
+    Base* dPtr = &d3;
     dPtr->function1();
     dPtr->function2();
-	dPtr = &d2;
-	dPtr->function1();
-    dPtr->function2();
-	Base b;
-    Base* bPtr = &b;
-	cout << "########" << endl;
-    bPtr->function1();
+	cout << sizeof(Base) << endl;
+	cout << sizeof(D1) << endl;
+	cout << sizeof(D2) << endl;
+	cout << sizeof(D3) << endl;
     return 0;
 }
