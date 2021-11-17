@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:22:25 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/08 21:30:47 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/14 15:24:29 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(void)
 ClapTrap::ClapTrap(string const & name) : _name(name)
 {
 	cout << "Parameterized contructor called" << endl;
-	_hitPoints = 100;
+	_hitPoints = 10;
 	_energyPoints = 10;
 	_attackDamage = 0;
 }

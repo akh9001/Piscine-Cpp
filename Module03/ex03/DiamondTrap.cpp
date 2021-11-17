@@ -6,30 +6,21 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:42:26 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/13 18:58:56 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/14 20:39:10 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void) : ClapTrap("Anonymous", 100, 50, 30)
 {
 	cout << "DiamondTrap::Default contructor called" << endl;
-	_name = "Anonymous";
-	ClapTrap::_name = _name + "_clap_name";
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(string const & name)
+DiamondTrap::DiamondTrap(string const & name) : ClapTrap(name + "_clap_name", 100, 50, 30)
 {
 	cout << "DiamondTrap::Parameterized contructor called" << endl;
 	_name = name;
-	ClapTrap::_name = _name + "_clap_name";
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
 }
 
 void	DiamondTrap::whoAmI(void)
@@ -48,6 +39,21 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
 	ClapTrap::operator=(rhs);
 	_name = rhs._name;
 	return(*this);
+}
+
+string	DiamondTrap::get_name_diamond(void) const
+{
+	return (_name);
+}
+
+void		DiamondTrap::set_name_diamond(string const & name)
+{
+	_name = name;
+}
+
+void	DiamondTrap::attack(string const & target)
+{
+	ScavTrap::attack(target);
 }
 
 DiamondTrap::~DiamondTrap(void)

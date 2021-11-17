@@ -6,48 +6,24 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:59:30 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/10 16:15:33 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/14 20:57:43 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int		main(void)
 {
-	ClapTrap	p1("player_1");
-	ClapTrap	p2("player_2");
-	
-	cout << "\n######Testing a player from ClapTrap class :#######\n" << endl;
-	p1.attack(p2.get_name());
-	p2.takeDamage(120);
-	p2.beRepaired(200);
-	cout << "\nName : " << p1.get_name() << endl;
-	cout << "Hit points : " << p1.get_hitPoints() << endl;
-	cout << "Energy points : " << p1.get_energyPoints() << endl;
-	cout << "Attack damage : " << p1.get_attackDamage() << endl << endl;
-	
-	
-	cout << "\n######Testing a player from Fragtrap class :#######\n" << endl;
-	
-	Fragtrap	p3("player_3");
-	p3.attack(p1.get_name());
-	p3.takeDamage(120);
-	p3.beRepaired(200);
-	p3.highFivesGuys();
-	cout << "\nName : " << p3.get_name() << endl;
-	cout << "Hit points : " << p3.get_hitPoints() << endl;
-	cout << "Energy points : " << p3.get_energyPoints() << endl;
-	cout << "Attack damage : " << p3.get_attackDamage() << endl << endl;
-	p3.set_name("player_003");
-	p3.set_hitPoints(200);
-	p3.set_energyPoints(100);
-	p3.set_attackDamage(40);
-	
-	cout << "######Print the player after setting its informations :#######" << endl;
-	
-	cout << "\nName : " << p3.get_name() << endl;
-	cout << "Hit points : " << p3.get_hitPoints() << endl;
-	cout << "Energy points : " << p3.get_energyPoints() << endl;
-	cout << "Attack damage : " << p3.get_attackDamage() << endl << endl;
+	DiamondTrap	obj("Diamond");
+
+	cout << "\nClaptrap Name : " << obj.get_name() << endl;
+	cout << "Diamond Name : " << obj.get_name_diamond() << endl;
+	cout << "Hit points : " << obj.get_hitPoints() << endl;
+	cout << "Energy points : " << obj.get_energyPoints() << endl;
+	cout << "Attack damage : " << obj.get_attackDamage() << endl << endl;
+	obj.attack("Asmaa");
+	obj.FragTrap::highFivesGuys();
+	obj.ScavTrap::guardGate();
+	obj.whoAmI();
 	return (0);
 }

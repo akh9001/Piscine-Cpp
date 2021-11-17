@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:47:48 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/08 21:26:59 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:43:07 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class	ClapTrap
 	public:
 		ClapTrap(void);
 		ClapTrap(string const & name);
+		ClapTrap(string const & name, int hitPoints, int energyPoints, int attackDamage);
 		ClapTrap(ClapTrap const & src);
 		ClapTrap	&operator=(ClapTrap const &rhs);
 		void		attack(string const & target);

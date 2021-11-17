@@ -6,15 +6,15 @@
 #    By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 10:31:18 by akhalidy          #+#    #+#              #
-#    Updated: 2021/11/10 16:09:38 by akhalidy         ###   ########.fr        #
+#    Updated: 2021/11/14 17:37:17 by akhalidy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all clean fclean re
 
-NAME = ex02
+NAME = ex03
 
-SRCS = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 

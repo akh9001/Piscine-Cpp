@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:59:30 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/10 16:15:33 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:28:14 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(void)
 	
 	cout << "\n######Testing a player from Fragtrap class :#######\n" << endl;
 	
-	Fragtrap	p3("player_3");
+	FragTrap	p3("player_3");
 	p3.attack(p1.get_name());
 	p3.takeDamage(120);
 	p3.beRepaired(200);

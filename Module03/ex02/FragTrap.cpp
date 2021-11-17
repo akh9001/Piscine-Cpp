@@ -6,36 +6,54 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:04:26 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/10 16:13:34 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:16:19 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-Fragtrap::Fragtrap(void)
+FragTrap::FragTrap(void)
 {
-	cout << "Fragtrap::Default contructor called" << endl;
+	cout << "FragTrap::Default contructor called" << endl;
 	_name = "Anonymous";
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
 }
 
-Fragtrap::Fragtrap(string const & name)
+FragTrap::FragTrap(string const & name)
 {
-	cout << "Fragtrap::Parameterized contructor called" << endl;
+	cout << "FragTrap::Parameterized contructor called" << endl;
 	_name = name;
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
 }
 
-void	Fragtrap::highFivesGuys(void)
+FragTrap::FragTrap(FragTrap const &src)
 {
-	cout << "Fragtrap : high fives guys !!!" << endl;
+	cout << "FragTrap::Copy contructor called" << endl;
+	*this = src;
 }
 
-Fragtrap::~Fragtrap(void)
+FragTrap &FragTrap::operator=(FragTrap const &rhs)
 {
-	cout << "Fragtrap::Destructor called" << endl; 
+	ClapTrap::operator=(rhs);
+	return(*this);
+}
+
+void	FragTrap::attack(string const & target)
+{
+	cout << "FragTrap " << _name << " attack " << target << ", causing ";
+	cout << _attackDamage << " points of damage!" << endl;
+}
+
+void	FragTrap::highFivesGuys(void)
+{
+	cout << "FragTrap : high fives guys !!!" << endl;
+}
+
+FragTrap::~FragTrap(void)
+{
+	cout << "FragTrap::Destructor called" << endl; 
 }
