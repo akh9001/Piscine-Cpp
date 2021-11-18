@@ -62,3 +62,5 @@ int main( )
   return 0; 
 }
 ```
+## Virtual destructor :
+https://www.geeksforgeeks.org/virtual-destructor/
