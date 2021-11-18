@@ -1,56 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:18:04 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/18 17:24:24 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:24:10 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(void) : type("undefined_Animal")
+WrongAnimal::WrongAnimal(void) : type("undefined_Animal")
 {
-	cout << "Animal::Default constructor called." << endl;
+	cout << "WrongAnimal::Default constructor called." << endl;
 }
 
-Animal::Animal(string type) : type(type)
+WrongAnimal::WrongAnimal(string type) : type(type)
 {
-	cout << "Animal::Parameterized constructor called." << endl;
+	cout << "WrongAnimal::Parameterized constructor called." << endl;
 }
 
-Animal::Animal(Animal const &src)
+WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
-	cout << "Animal::Copy constructor called." << endl;
+	cout << "WrongAnimal::Copy constructor called." << endl;
 	*this = src;
 }
 
-Animal	&Animal::operator=(Animal const &rhs)
+WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &rhs)
 {
-	cout << "Animal::Assignement operator called." << endl;
+	cout << "WrongAnimal::Assignement operator called." << endl;
 	this->type = rhs.type;
 	return(*this);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
 	cout << "[ " << this->type << " ] says [ undefined sound ]!" << endl;
 }
 
-string	Animal::getType(void) const
+string	WrongAnimal::getType(void) const
 {
 	return(this->type);
 }
 
-void	Animal::setType(string const &type)
+void	WrongAnimal::setType(string const &type)
 {
 	this->type = type;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	cout << "Animal::Destructor called." << endl;
+	cout << "WrongAnimal::Destructor called." << endl;
 }
