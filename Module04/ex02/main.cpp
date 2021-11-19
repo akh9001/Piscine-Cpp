@@ -6,20 +6,21 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:50:05 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/20 00:13:47 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/20 00:19:20 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 #define RESET   "\033[0m"
-#define BOLDGREEN   "\033[1m\033[32m"
+#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
 
 int main(void)
 {
 	cout << BOLDGREEN << "\n Creating an array of diffrents animal & delete it !\n" << RESET << endl;
 	{
 		Animal	*Animals[4];
+		// Animal	animal; //Compiler error : 'Animal' is an abstract class can t be instanciated
 
 		for (int i = 0; i < 4; i++)
 		{
@@ -28,6 +29,9 @@ int main(void)
 			else
 				Animals[i] = new Cat();
 		}
+		// Pure virtual functions with bodies :
+		//https://www.learncpp.com/cpp-tutorial/pure-virtual-functions-abstract-base-classes-and-interface-classes/
+		Animals[0]->Animal::makeSound();
 		for (int i = 0; i < 4; i++)
 		{
 			cout << "Animal[" << i << "] ";

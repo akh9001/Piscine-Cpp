@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:05:26 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/19 22:00:05 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/19 23:46:29 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.hpp"
+#include <iostream>
+#include <string>
+#define	cout		std::cout
+#define	cin			std::cin
+#define	endl		std::endl
+#define	string		std::string
+#define to_string	std::to_string
 
-class Brain
+class Animal
 {
-	private:
-		string	ideas[100];
+	protected:
+		string	type;
 	public:
-		Brain(void);
-		Brain(Brain const &src);
-		Brain	&operator=(Brain const &rhs); //rhs : right hand side
-		string	getIdea(int i) const;
-		void	setIdea(int i, string const &idea);
-		~Brain(void);
+		Animal(void);
+		Animal(string type);
+		Animal(Animal const &src);
+		Animal	&operator=(Animal const &rhs); //rhs : right hand side
+		string	getType(void) const;
+		void	setType(string const & type);
+		virtual	void	makeSound(void) const = 0;
+		virtual ~Animal(void);
 };
