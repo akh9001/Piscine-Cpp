@@ -64,3 +64,6 @@ int main( )
 ```
 ## Virtual destructor :
 https://www.geeksforgeeks.org/virtual-destructor/
+
+## Colored output in C++ :
+https://stackoverflow.com/questions/9158150/colored-output-in-c
