@@ -67,3 +67,6 @@ https://www.geeksforgeeks.org/virtual-destructor/
 
 ## Colored output in C++ :
 https://stackoverflow.com/questions/9158150/colored-output-in-c
+
+## NULL vs nullptr
+nullptr is a keyword that represents zero as an address (its type is considered a pointer-type), while NULL is the value zero as an int . If you're writing something where you're referring to the zero address, rather than the value zero, you should use nullptr 
