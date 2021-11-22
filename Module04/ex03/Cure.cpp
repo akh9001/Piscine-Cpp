@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 06:15:55 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/22 04:40:03 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/22 04:39:42 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
 
-Ice::Ice(void) : AMateria("ice")
+Cure::Cure(void) : AMateria("cure")
 {
-	// cout << "Ice::Default constructor called." << endl;
+	// cout << "Cure::Default constructor called." << endl;
 }
 
-Ice::Ice(Ice const &src) : AMateria("ice")
+Cure::Cure(Cure const &src) : AMateria("cure")
 {
-	// cout << "Ice::Copy constructor called." << endl;
+	// cout << "Cure::Copy constructor called." << endl;
 	*this = src;
 }
 
-Ice  &Ice::operator=(Ice const &rhs)
+Cure  &Cure::operator=(Cure const &rhs)
 {
-	// cout << "Ice::Assignement operator called." << endl;
+	// cout << "Cure::Assignement operator called." << endl;
 	(void)rhs;
 	return (*this);
 }
 
-AMateria *Ice::clone(void) const
+AMateria *Cure::clone(void) const
 {
-	return(new Ice());
+	return(new Cure());
 }
 
-void	Ice::use(ICharacter &target)
+void	Cure::use(ICharacter &target)
 {
-	cout << "* shoots an ice bolt at "<< target.getName() << " *" << endl;
+	cout << "* heals "<< target.getName() << "’s wounds *" << endl;
 }
 
-Ice::~Ice(void)
+Cure::~Cure(void)
 {
-	// cout << "Ice::Destructor called." << endl;
+	// cout << "Cure::Destructor called." << endl;
 }

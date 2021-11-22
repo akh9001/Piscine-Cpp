@@ -6,34 +6,26 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 07:07:49 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/21 07:17:57 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/22 04:38:25 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
 	private:
-		string	_name;
+		string		_name;
+		AMateria	*_inventory[4];
 	public:
 		Character(void);
-		string const & getName() const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
-		~Character();
+		Character(string const &name);
+		Character(Character const &src);
+		Character &operator=(Character const &rhs);
+		virtual string const & getName() const;
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter& target);
+		~Character(void);
 };
-
-Character::Character(/* args */)
-{
-}
-
-string const &Character::getName() const
-{
-	return (this->_name);
-}
-
-Character::~Character()
-{
-}

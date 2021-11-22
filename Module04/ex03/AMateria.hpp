@@ -6,12 +6,14 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 00:10:51 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/21 06:29:58 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/22 04:33:21 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma	once
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -20,10 +22,10 @@ class AMateria
 	public:
 		AMateria(void);
 		AMateria(string const & type);
-		// AMateria(AMateria const &src);
-		// AMateria &operator=(AMateria const &rhs);
+		AMateria(AMateria const &src);
+		AMateria &operator=(AMateria const &rhs);
 		string const &getType(void) const; //Returns the materia type
 		virtual AMateria* clone(void) const = 0;
 		virtual void use(ICharacter& target);
-		~AMateria(void);
+		virtual ~AMateria(void);
 };
