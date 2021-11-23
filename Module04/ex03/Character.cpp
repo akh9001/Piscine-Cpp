@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 02:26:48 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/22 05:14:24 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/23 06:56:36 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,19 @@ Character::Character(Character const &src)
 Character &Character::operator=(Character const &rhs)
 {
 	// cout << "Character::Assignement operator called." << endl;
+	if (this == &rhs)
+		return (*this);
 	this->_name =  rhs._name;
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
-		this->_inventory[i] = rhs._inventory[i]->clone();
+		if (rhs._inventory[i])
+			this->_inventory[i] = rhs._inventory[i]->clone();
+		else
+			this->_inventory[i] = nullptr;
 	}
-	return *this;
+	return (*this);
 }
 
 string const &Character::getName() const
@@ -59,7 +64,7 @@ void	Character::equip(AMateria *m)
 	{
 		if (_inventory[i] == nullptr)
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			break;
 		}
 	}
@@ -74,7 +79,6 @@ void	Character::unequip(int idx)
 void	Character::use(int idx, ICharacter& target)
 {
 	if (idx >= 0 && idx < 4 && _inventory[idx])
-		
 		_inventory[idx]->use(target);
 }
 

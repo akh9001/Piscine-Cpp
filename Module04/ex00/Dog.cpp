@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:11:51 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/17 22:17:50 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/23 07:10:56 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ Dog::Dog(Dog const &src)
 Dog	&Dog::operator=(Dog const &rhs)
 {
 	cout << "Dog::Assignation operator called" << endl;
-	Animal::operator=(rhs);
+	if (this == &rhs)
+		return (*this);
+	this->type = rhs.type;
 	return(*this);
 }
 

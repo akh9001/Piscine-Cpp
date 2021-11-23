@@ -6,10 +6,11 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 02:23:53 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/22 04:37:40 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/23 05:53:15 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource

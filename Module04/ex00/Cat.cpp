@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:19:15 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/17 22:08:04 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/23 07:10:15 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ Cat::Cat(Cat const &src)
 Cat	&Cat::operator=(Cat const &rhs)
 {
 	cout << "Cat::Assignation operator called" << endl;
-	Animal::operator=(rhs);
+	if (this == &rhs)
+		return (*this);
+	this->type = rhs.type;
 	return(*this);
 }
 
