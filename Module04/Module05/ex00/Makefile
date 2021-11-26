@@ -6,13 +6,13 @@
 #    By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:11:58 by akhalidy          #+#    #+#              #
-#    Updated: 2021/11/26 08:15:07 by akhalidy         ###   ########.fr        #
+#    Updated: 2021/11/26 20:53:32 by akhalidy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all clean fclean re
 
-NAME = ex03
+NAME = ex00
 
 SRCS = Bureaucrat.cpp main.cpp
 
