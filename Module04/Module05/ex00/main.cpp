@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 18:24:38 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/26 19:39:06 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/26 20:51:34 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int main(void)
 {
 	try
 	{
+		cout << BOLDCYAN << "Create a Bureaucrat with a grade too high/low.";
+		cout << RESET << endl;
 		Bureaucrat	B1("B1", 0);
 		Bureaucrat	B3("B3", 200);
 	}
@@ -43,7 +45,8 @@ int main(void)
 	
 	try
 	{
-		Bureaucrat	B2("B2", 120);
+		cout << BOLDCYAN << "\nCreate 4 valid obj from Bureauctrat :" << RESET << endl;
+		Bureaucrat	B2("B2", 3);
 		Bureaucrat	B4("B4", 1);
 		Bureaucrat	B5("B5", 150);
 		Bureaucrat	Bx;
@@ -52,23 +55,20 @@ int main(void)
 		Bx.incrementGrade();
 		// cout << "BX NAME " << Bx.getName() << endl;
 		// cout << "BX GRADE " << Bx.getGrade() << endl;
+		cout << B2;
 		cout << Bx;
-		cout << BOLDCYAN << " TESTING DECREMENTATION :" << RESET << endl;
+		cout << BOLDCYAN << "\n TESTING DECREMENTATION :" << RESET << endl;
 		Bx = B2;
 		Bx.decrementGrade();
 		// cout << "BX NAME " << Bx.getName() << endl;
 		// cout << "BX GRADE "<< Bx.getGrade() << endl;
+		cout << B2;
 		cout << Bx;
-		cout << BOLDMAGENTA << " TESTING EXCEPTIONS :" << RESET << endl;
-		B4.incrementGrade();
+		cout << BOLDMAGENTA << "\n TESTING EXCEPTIONS :\n" << RESET << endl;
 		B5.decrementGrade();
+		B4.incrementGrade();
 	}
-	catch (Bureaucrat::HighException &e)
-	{
-		std::cerr << RED << e.what() << RESET << endl;
-	}
-
-	catch (Bureaucrat::LowException &e)
+	catch (const exception& e)
 	{
 		std::cerr << RED << e.what() << RESET << endl;
 	}
