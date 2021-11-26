@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:46:11 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/26 18:19:10 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/26 23:48:56 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 #define	string		std::string
 #define	exception	std::exception
 #define	ostream		std::ostream
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 	private:
@@ -44,6 +46,7 @@ class Bureaucrat
 		int		getGrade(void) const;
 		void	incrementGrade(void);
 		void	decrementGrade(void);
+		void	signForm(Form const &form);
 		~Bureaucrat();
 };
 
