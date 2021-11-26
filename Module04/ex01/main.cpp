@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:50:05 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/20 00:13:47 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/23 07:52:48 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int main(void)
 	{
 		Cat	Gray;
 		
-		Dahmis.getBrain()->setIdea(0, "Nothing");
 		Gray = Dahmis;
 		Gray.getType();
 		cout << "\n\nGray s idea before : " << Gray.getBrain()->getIdea(25) << endl;

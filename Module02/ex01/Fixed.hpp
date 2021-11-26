@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 19:03:51 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/27 19:22:04 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/03 13:46:24 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,4 @@ public:
 	int		toInt( void ) const;
 };
 
-ostream & operator << (ostream & out, const Fixed &obj);
+ostream & operator << (ostream & out, const Fixed &obj); 

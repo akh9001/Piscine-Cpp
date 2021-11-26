@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 19:03:51 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/10/24 19:35:44 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/03 13:13:44 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ private:
 public:
 	Fixed(void);
 	Fixed(Fixed const & src);
-	~Fixed();
+	~Fixed(void);
 	Fixed & operator=(Fixed const & rhs);
 	int		getRawBits(void) const;
-	void	setRawBits(int const raw); 
+	void	setRawBits(int const raw);
 };
