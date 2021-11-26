@@ -74,3 +74,6 @@ nullptr is a keyword that represents zero as an address (its type is considered 
 Exception handling provides a mechanism to decouple handling of errors or other exceptional circumstances from the typical control flow of your code.
 Using return codes causes your control flow and error flow to be intermingled, constraining both. Exceptions in C++ are implemented using three keywords that work in conjunction with each other: throw, try, and catch.
 https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/
+
+# virtual const char* what() const throw():
+throw() means that you promise to the compiler that this function will never allow an exception to be emitted. This is called an exception specification, and (long story short) is useless and possibly misleading.(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c)
