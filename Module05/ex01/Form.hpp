@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 21:38:47 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/26 23:33:10 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/27 07:03:43 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ class Form
 		};
 		Form(void);
 		Form(const Form &src);
-		Form(string name, bool sign, int signGrade, int execGrade);
+		Form(string name, int signGrade, int execGrade);
 		Form	&operator=(const Form &rhs);
-		const string	get_name(void) const;
-		bool			get_signed(void) const;
-		const int		get_signGrade(void) const;
-		const int		get_execGrade(void) const;
-		void			beSigned(Bureaucrat const &bureaucrat);
+		string	get_name(void) const;
+		bool	get_signed(void) const;
+		int		get_signGrade(void) const;
+		int		get_execGrade(void) const;
+		void	beSigned(Bureaucrat &bureaucrat);
 		~Form(void);
 };
 

@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:10:43 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/26 23:27:06 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/11/27 06:20:24 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,13 @@ void	Bureaucrat::decrementGrade(void)
 
 void	Bureaucrat::signForm(Form const &form)
 {
-	if (form.get_signed())
+	if (_grade <= form.get_signGrade())
 		cout << _name << " signs " << form.get_name() << endl;
 	else
 	{
 		cout << _name << " cannot sign " << form.get_name();
 		cout << " because too low grade." << endl;
-	}
-		
+	}	
 }
 
 Bureaucrat::~Bureaucrat()
