@@ -86,12 +86,15 @@ https://stackoverflow.com/questions/9158150/colored-output-in-c
 #define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 #define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 ```
+
 ## NULL vs nullptr
 nullptr is a keyword that represents zero as an address (its type is considered a pointer-type), while NULL is the value zero as an int . If you're writing something where you're referring to the zero address, rather than the value zero, you should use nullptr 
 ## Exceptions
 Exception handling provides a mechanism to decouple handling of errors or other exceptional circumstances from the typical control flow of your code.
 Using return codes causes your control flow and error flow to be intermingled, constraining both. Exceptions in C++ are implemented using three keywords that work in conjunction with each other: throw, try, and catch.
+The exception caused the execution path to jump immediately to the exception handler.
+__*try :*__ Look for exceptions that occur within try block and route to attached catch block(s).
 https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/
 
 # virtual const char* what() const throw():
-throw() means that you promise to the compiler that this function will never allow an exception to be emitted. This is called an exception specification, and (long story short) is useless and possibly misleading.(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c)
+throw() means that you promise to the compiler that this function will never allow an exception to be emitted. This is called an exception specification, and (long story short) is useless and possibly misleading.(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c).
