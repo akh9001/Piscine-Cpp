@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:46:11 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/26 23:48:56 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 20:34:01 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class Bureaucrat
 		void	incrementGrade(void);
 		void	decrementGrade(void);
 		void	signForm(Form const &form);
+		void	executeForm(Form const & form);
 		~Bureaucrat();
 };
 

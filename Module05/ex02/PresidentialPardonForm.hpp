@@ -6,29 +6,23 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:09:11 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/28 07:48:44 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:42:43 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Form.hpp"
-#define	 PPF PresidentialPardonForm
 
-class PPF : public Form
+class PresidentialPardonForm : public Form
 {
 	private:
 		
 	public:
-		class Unsigned : public exception
-		{
-			public :
-			virtual const char *what(void) const throw();
-		};
-		PPF(void);
-		PPF(string target);
-		PPF(PPF const &src);
-		PPF	&operator=(PPF const &rhs);
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(string const &target);
+		PresidentialPardonForm(PresidentialPardonForm const &src);
+		PresidentialPardonForm	&operator=(PresidentialPardonForm const &rhs);
 		void	pardon(void) const;
 		virtual void	execute(Bureaucrat const & executor) const;
-		~PPF(void);
+		~PresidentialPardonForm(void);
 };

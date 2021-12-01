@@ -6,20 +6,53 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:32:21 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/28 05:32:45 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 20:26:59 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::HighException::HighException(string const &name)
+{
+	_name = name;
+}
 
 const char *Form::HighException::what(void) const throw()
 {
 	return ("Form::GradeTooHighException.");
 }
 
+Form::LowException::LowException(string const &name)
+{
+	_name = name;
+}
+
 const char *Form::LowException::what(void) const throw()
 {
 	return ("Form::GradeTooLowException.");
+}
+
+Form::Unsigned::Unsigned(string const &name)
+{
+	_name = name;
+}
+
+const char *Form::Unsigned::what(void) const throw()
+{
+	return (string("Form::Unsigned " + _name + ".").c_str());
+}
+
+Form::Illegal::Illegal(string const &name)
+{
+	_name = name;
+}
+
+const char *Form::Illegal::what(void) const throw()
+{
+	string	str;
+
+	str = "Form::Bureaucrat isn't legitimate to execute " + _name;
+	return (str.c_str());
 }
 
 Form::Form(void) : _name("imposter"), _signed(false), _signGrade(150),
@@ -28,14 +61,14 @@ Form::Form(void) : _name("imposter"), _signed(false), _signGrade(150),
 	cout << "Form::Default constructor called." << endl;
 }
 
-Form::Form(string name, string target, int signGrade, int execGrade) : _name(name),
+Form::Form(string const &name, string const &target, int signGrade, int execGrade) : _name(name),
 		_signed(false), _signGrade(signGrade), _execGrade(execGrade), _target(target)
 {
 	cout << "Form::Parameterized constructor called." << endl;
 	if (signGrade < 1 || execGrade < 1)
-		throw(HighException());
+		throw(HighException(get_name()));
 	else if (signGrade > 150 || execGrade > 150)
-		throw(LowException());
+		throw(LowException(get_name()));
 }
 
 Form::Form(const Form &src) : _name(src._name), _signed(src._signed),
@@ -77,7 +110,7 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() <= _signGrade)
 		_signed = true;
 	else
-		throw(LowException());
+		throw(LowException(get_name()));
 }
 
 ostream		&operator<<(ostream &out, const Form &rhs)

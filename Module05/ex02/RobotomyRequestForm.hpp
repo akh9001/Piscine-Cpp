@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:09:27 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/28 07:03:13 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 13:00:49 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ class RRF : public Form
 		
 	public:
 		RRF(void);
-		RRF(string target);
+		RRF(string const &target);
 		RRF(RRF const &src);
 		RRF	&operator=(RRF const &rhs);
-		void	robotomize(void) const;	
+		void	robotomize(void) const;
+		virtual void	execute(Bureaucrat const & executor) const;
 		~RRF(void);
 };

@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 18:24:38 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/27 09:02:28 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:18:51 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,36 +31,36 @@
 
 int main(void)
 {
-	try
-	{
-		cout << BOLDCYAN << "Create a Form with grades too high/low.";
-		cout << RESET << endl;
-		Form	F2("test2", 20, 512);
-		Form	F1("test1", -2, 12);
-	}
-	catch(const exception& e)
-	{
-		std::cerr << RED << e.what() << RESET << endl;
-	}
+	// try
+	// {
+	// 	cout << BOLDCYAN << "Create a Form with grades too high/low.";
+	// 	cout << RESET << endl;
+	// 	Form	F2("test2", 20, 512);
+	// 	Form	F1("test1", -2, 12);
+	// }
+	// catch(const exception& e)
+	// {
+	// 	std::cerr << RED << e.what() << RESET << endl;
+	// }
 	
-	try
-	{
-		cout << BOLDCYAN << "\nCreate a valid obj from Form & test it:" << RESET << endl;
-		Form		F3("test3", 28, 2);
-		Bureaucrat	B1("B1", 1);
-		Bureaucrat	B2("B2", 150);
-		Bureaucrat	B3("B3", 28);
-		cout << F3;
-		cout << CYAN << "Test 0" << RESET << endl;
-		F3.beSigned(B1);
-		cout << CYAN << "Test 1" << RESET << endl;
-		F3.beSigned(B3);
-		cout << CYAN << "Test 2" << RESET << endl;
-		F3.beSigned(B2);
-	}
-	catch (const exception& e)
-	{
-		std::cerr << RED << e.what() << RESET << endl;
-	}
+	// try
+	// {
+	// 	cout << BOLDCYAN << "\nCreate a valid obj from Form & test it:" << RESET << endl;
+	// 	Form		F3("test3", 28, 2);
+	// 	Bureaucrat	B1("B1", 1);
+	// 	Bureaucrat	B2("B2", 150);
+	// 	Bureaucrat	B3("B3", 28);
+	// 	cout << F3;
+	// 	cout << CYAN << "Test 0" << RESET << endl;
+	// 	F3.beSigned(B1);
+	// 	cout << CYAN << "Test 1" << RESET << endl;
+	// 	F3.beSigned(B3);
+	// 	cout << CYAN << "Test 2" << RESET << endl;
+	// 	F3.beSigned(B2);
+	// }
+	// catch (const exception& e)
+	// {
+	// 	std::cerr << RED << e.what() << RESET << endl;
+	// }
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:10:43 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/27 14:43:27 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 20:41:11 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,15 @@ void	Bureaucrat::signForm(Form const &form)
 	}
 }
 
-Bureaucrat::~Bureaucrat()
+void	Bureaucrat::executeForm(Form const & form)
+{ 
+	if (!form.get_signed() || this->getGrade() > form.get_execGrade())
+		cout << _name << " can' t execute " << form.get_name() << " form." << endl;
+	else
+		cout << _name << " executes " << form.get_name() << " form." << endl;
+}
+
+Bureaucrat::~Bureaucrat(void)
 {
 	cout << "Bureauctrat::Destructor called." << endl;
 }

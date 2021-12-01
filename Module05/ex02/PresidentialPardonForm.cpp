@@ -6,54 +6,56 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 06:29:55 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/28 07:50:27 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 20:32:38 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-const char *PPF::Unsigned::what(void) const throw()
-{
-	return ("PPF::UnsignedException.");
-}
+// const char *PresidentialPardonForm::Unsigned::what(void) const throw()
+// {
+// 	return ("PresidentialPardonForm::UnsignedException.");
+// }
 
-PPF::PPF(void) :
+PresidentialPardonForm::PresidentialPardonForm(void) :
 Form("PresidentialPardonForm", "undefined", 25, 5)
 {
-	cout << "PPF::Default constructor called." << endl;
+	cout << "PresidentialPardonForm::Default constructor called." << endl;
 }
 
-PPF::PPF(string target) :
+PresidentialPardonForm::PresidentialPardonForm(string const &target) :
 Form("PresidentialPardonForm", target, 25, 5)
 {
-	cout << "PPF::Default constructor called." << endl;
+	cout << "PresidentialPardonForm::Default constructor called." << endl;
 }
 
-PPF::PPF(PPF const &src) : Form("PresidentialPardonForm", "undefined", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src) : Form("PresidentialPardonForm", "undefined", 25, 5)
 {
-	cout << "PPF::Copy destructor called." << endl;
+	cout << "PresidentialPardonForm::Copy destructor called." << endl;
 	*this = src;
 }
 
-PPF		&PPF::operator=(PPF const &src)
+PresidentialPardonForm		&PresidentialPardonForm::operator=(PresidentialPardonForm const &src)
 {
-	cout << "PPF::Assignement operator called." << endl;
+	cout << "PresidentialPardonForm::Assignement operator called." << endl;
 	set_target(src.get_target());
 	set_signed(src.get_signed());
 }
 
-void	PPF::pardon(void) const
+void	PresidentialPardonForm::pardon(void) const
 {
 	cout << get_target() << " has been pardoned by Zafod Beeblebrox." << endl;
 }
 
-void	PPF::execute(Bureaucrat const & executor) const
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (!get_signed())
-		throw(Unsigned());
+		throw Form::Unsigned(get_name());
+	if (executor.getGrade() > this->get_execGrade())
+		throw Form::Illegal(get_name());
 }
 
-PPF::~PPF(void)
+PresidentialPardonForm::~PresidentialPardonForm(void)
 {
-	cout << "PPF::Destructor called." << endl;
+	cout << "PresidentialPardonForm::Destructor called." << endl;
 }

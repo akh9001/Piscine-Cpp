@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:09:01 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/28 07:05:27 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 12:49:20 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Form("RobotomyRequestForm", "undefined", 72, 45)
 	cout << "RRF::Default constructor called." << endl;
 }
 
-RRF::RRF(string target) :
+RRF::RRF(string const &target) :
 Form("RobotomyRequestForm", target, 72, 45)
 {
 	cout << "RRF::Default constructor called." << endl;

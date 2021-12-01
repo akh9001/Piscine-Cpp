@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:09:36 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/28 07:07:36 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 13:01:10 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ class SCF : public Form
 		
 	public:
 		SCF(void);
-		SCF(string target);
+		SCF(string const &target);
 		SCF(SCF const &src);
 		SCF	&operator=(SCF const &rhs);
-		void	creat_Shrubbery(void) const;	
+		void	creat_Shrubbery(void) const;
+		virtual void	execute(Bureaucrat const & executor) const;
 		~SCF(void);
 };

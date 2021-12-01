@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:09:31 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/28 07:07:18 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/01 12:42:55 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Form("ShrubberyCreationForm", "undefined", 145, 137)
 	cout << "SCF::Default constructor called." << endl;
 }
 
-SCF::SCF(string target) :
+SCF::SCF(string const &target) :
 Form("ShrubberyCreationForm", target, 145, 137)
 {
 	cout << "SCF::Default constructor called." << endl;
