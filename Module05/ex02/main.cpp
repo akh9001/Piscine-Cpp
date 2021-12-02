@@ -6,61 +6,44 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 18:24:38 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/01 16:18:51 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 21:23:44 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#define RESET   "\033[0m"
-#define BLACK   "\033[30m"      /* Black */
-#define RED     "\033[31m"      /* Red */
-#define GREEN   "\033[32m"      /* Green */
-#define YELLOW  "\033[33m"      /* Yellow */
-#define BLUE    "\033[34m"      /* Blue */
-#define MAGENTA "\033[35m"      /* Magenta */
-#define CYAN    "\033[36m"      /* Cyan */
-#define WHITE   "\033[37m"      /* White */
-#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
-#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
-#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
-#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
-#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
-#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
-#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
-#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
-	// try
-	// {
-	// 	cout << BOLDCYAN << "Create a Form with grades too high/low.";
-	// 	cout << RESET << endl;
-	// 	Form	F2("test2", 20, 512);
-	// 	Form	F1("test1", -2, 12);
-	// }
-	// catch(const exception& e)
-	// {
-	// 	std::cerr << RED << e.what() << RESET << endl;
-	// }
+	ShrubberyCreationForm	SCF("Home");
+	RobotomyRequestForm		RRF("School");
+	PresidentialPardonForm	PPF("Ministry");
+	Bureaucrat				B1("B1", 1);
+	Bureaucrat				B75("B75", 75);
+	Bureaucrat				B137("B137", 137);
+	Bureaucrat				B150("B150", 150);
 	
-	// try
-	// {
-	// 	cout << BOLDCYAN << "\nCreate a valid obj from Form & test it:" << RESET << endl;
-	// 	Form		F3("test3", 28, 2);
-	// 	Bureaucrat	B1("B1", 1);
-	// 	Bureaucrat	B2("B2", 150);
-	// 	Bureaucrat	B3("B3", 28);
-	// 	cout << F3;
-	// 	cout << CYAN << "Test 0" << RESET << endl;
-	// 	F3.beSigned(B1);
-	// 	cout << CYAN << "Test 1" << RESET << endl;
-	// 	F3.beSigned(B3);
-	// 	cout << CYAN << "Test 2" << RESET << endl;
-	// 	F3.beSigned(B2);
-	// }
-	// catch (const exception& e)
-	// {
-	// 	std::cerr << RED << e.what() << RESET << endl;
-	// }
+	cout << BOLDCYAN << "\nSign the diffrents forms :" << RESET << endl;
+	B150.signForm(SCF);
+	B1.signForm(RRF);
+	B1.signForm(PPF);
+	cout << BOLDCYAN << "\nExecute SCF Form with differents Bureaucrats:" << RESET << endl;
+	cout << BOLDMAGENTA << "Required grades: sign 145, exec 137." << RESET << endl;
+	B1.executeForm(SCF);
+	B75.executeForm(SCF);
+	B137.executeForm(SCF);
+	cout << BOLDCYAN << "\nExecute RRF Form with differents Bureaucrats:" << RESET << endl;
+	cout << BOLDMAGENTA << "Required grades: sign 72, exec 45." << RESET << endl;
+	for (int i = 0; i < 4; i++)
+		B1.executeForm(RRF);
+	B75.executeForm(RRF);
+	B137.executeForm(RRF);
+	cout << BOLDCYAN << "\nExecute PPF Form with differents Bureaucrats:" << RESET << endl;
+	cout << BOLDMAGENTA << "Required grades: sign 25, exec 5." << RESET << endl;
+	B1.executeForm(PPF);
+	B75.executeForm(PPF);
+	B137.executeForm(PPF);
+	cout << endl;
 	return (0);
 }

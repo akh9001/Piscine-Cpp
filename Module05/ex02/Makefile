@@ -6,7 +6,7 @@
 #    By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:11:58 by akhalidy          #+#    #+#              #
-#    Updated: 2021/11/27 07:13:22 by akhalidy         ###   ########.fr        #
+#    Updated: 2021/12/02 18:53:51 by akhalidy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 
 NAME = ex01
 
-SRCS = Bureaucrat.cpp Form.cpp main.cpp
+SRCS =	Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 

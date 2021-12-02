@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 06:29:55 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/01 20:32:38 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 19:12:57 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ PresidentialPardonForm		&PresidentialPardonForm::operator=(PresidentialPardonFor
 	cout << "PresidentialPardonForm::Assignement operator called." << endl;
 	set_target(src.get_target());
 	set_signed(src.get_signed());
+	return(*this);
 }
 
 void	PresidentialPardonForm::pardon(void) const
@@ -53,6 +54,7 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 		throw Form::Unsigned(get_name());
 	if (executor.getGrade() > this->get_execGrade())
 		throw Form::Illegal(get_name());
+	pardon();
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void)

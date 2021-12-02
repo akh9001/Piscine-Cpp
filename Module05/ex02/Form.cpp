@@ -6,56 +6,74 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:32:21 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/01 20:26:59 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 21:10:49 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
+
 Form::HighException::HighException(string const &name)
 {
 	_name = name;
+	_msg =  _name + "::GradeTooHighException.";
 }
 
-const char *Form::HighException::what(void) const throw()
+Form::HighException::~HighException() throw()
 {
-	return ("Form::GradeTooHighException.");
+}
+
+const char *Form::HighException::what() const throw()
+{
+	return (_msg.c_str());
 }
 
 Form::LowException::LowException(string const &name)
 {
 	_name = name;
+	_msg = _name + "::GradeTooLowException.";
 }
 
-const char *Form::LowException::what(void) const throw()
+Form::LowException::~LowException() throw()
 {
-	return ("Form::GradeTooLowException.");
+}
+
+const char *Form::LowException::what() const throw()
+{
+	return (_msg.c_str());
 }
 
 Form::Unsigned::Unsigned(string const &name)
 {
 	_name = name;
+	_msg  = _name + "::Unsigned " + _name + ".";
 }
 
-const char *Form::Unsigned::what(void) const throw()
+Form::Unsigned::~Unsigned() throw()
 {
-	return (string("Form::Unsigned " + _name + ".").c_str());
+}
+
+const char *Form::Unsigned::what() const throw()
+{
+	return (_msg.c_str());
+}
+
+Form::Illegal::~Illegal() throw()
+{
 }
 
 Form::Illegal::Illegal(string const &name)
 {
 	_name = name;
+	_msg  = _name + "::Bureaucrat isn't legitimate to execute " + _name;
 }
 
-const char *Form::Illegal::what(void) const throw()
+const char *Form::Illegal::what() const throw()
 {
-	string	str;
-
-	str = "Form::Bureaucrat isn't legitimate to execute " + _name;
-	return (str.c_str());
+	return (_msg.c_str());
 }
 
-Form::Form(void) : _name("imposter"), _signed(false), _signGrade(150),
+Form::Form(void) : _name("Form"), _signed(false), _signGrade(150),
 	_execGrade(150), _target("undefined")
 {
 	cout << "Form::Default constructor called." << endl;
@@ -106,7 +124,6 @@ int		Form::get_execGrade(void) const
 
 void	Form::beSigned(Bureaucrat &bureaucrat)
 {
-	bureaucrat.signForm(*this);
 	if (bureaucrat.getGrade() <= _signGrade)
 		_signed = true;
 	else

@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:10:43 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/01 20:41:11 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 21:22:28 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,23 +74,37 @@ void	Bureaucrat::decrementGrade(void)
 	_grade += 1; 
 }
 
-void	Bureaucrat::signForm(Form const &form)
+void	Bureaucrat::signForm(Form &form)
 {
-	if (_grade <= form.get_signGrade())
-		cout << _name << " signs " << form.get_name() << endl;
-	else
+	try
 	{
-		cout << _name << " cannot sign " << form.get_name();
-		cout << " because too low grade." << endl;
+		form.beSigned(*this);
+		cout << _name << " signs " << form.get_name() << endl;
+	}
+	catch(const Form::LowException& e)
+	{
+		cerr << _name << " cannot sign " << form.get_name() << " because ";
+		cerr << e.what() << endl;
 	}
 }
 
 void	Bureaucrat::executeForm(Form const & form)
 { 
-	if (!form.get_signed() || this->getGrade() > form.get_execGrade())
-		cout << _name << " can' t execute " << form.get_name() << " form." << endl;
-	else
+	try
+	{
+		form.execute(*this);
 		cout << _name << " executes " << form.get_name() << " form." << endl;
+	}
+	catch (const Form::Illegal &e)
+	{
+		cerr << _name << " can' t execute " << form.get_name() << " form." << endl;
+		cerr << RED << e.what() << RESET << endl;
+	}
+	catch (const Form::Unsigned &e)
+	{
+		cerr << _name << " can' t execute " << form.get_name() << " form." << endl;
+		cerr << RED << e.what() << RESET << endl;
+	}
 }
 
 Bureaucrat::~Bureaucrat(void)
