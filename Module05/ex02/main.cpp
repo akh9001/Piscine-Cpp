@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 18:24:38 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/02 21:23:44 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 21:30:19 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main(void)
 	B1.signForm(PPF);
 	cout << BOLDCYAN << "\nExecute SCF Form with differents Bureaucrats:" << RESET << endl;
 	cout << BOLDMAGENTA << "Required grades: sign 145, exec 137." << RESET << endl;
+	B137.signForm(SCF);
 	B1.executeForm(SCF);
 	B75.executeForm(SCF);
 	B137.executeForm(SCF);

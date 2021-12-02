@@ -6,13 +6,13 @@
 #    By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:11:58 by akhalidy          #+#    #+#              #
-#    Updated: 2021/12/02 18:53:51 by akhalidy         ###   ########.fr        #
+#    Updated: 2021/12/02 21:29:07 by akhalidy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all clean fclean re
 
-NAME = ex01
+NAME = ex02
 
 SRCS =	Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp

@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:32:21 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/27 08:33:58 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 23:28:00 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int		Form::get_execGrade(void) const
 
 void	Form::beSigned(Bureaucrat &bureaucrat)
 {
-	bureaucrat.signForm(*this);
 	if (bureaucrat.getGrade() <= _signGrade)
 		_signed = true;
 	else

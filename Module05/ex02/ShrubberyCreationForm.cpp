@@ -6,13 +6,12 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:09:31 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/02 20:25:28 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 23:22:02 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
-#define RESET   "\033[0m"
+
 ShrubberyCreationForm::ShrubberyCreationForm(void) :
 Form("ShrubberyCreationForm", "undefined", 145, 137)
 {
@@ -43,6 +42,8 @@ void	ShrubberyCreationForm::creat_Shrubbery(void) const
 {
 	ofstream	File(get_target() + "_shrubbery");
 	
+	if (!File)
+		throw(FileError());
 	File << "                                              ." << endl;
 	File << "                                   .         ;" << endl;
 	File << "      .              .              ;%     ;;" << endl;
@@ -110,10 +111,21 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw Form::Unsigned(this->get_name());
 	if (executor.getGrade() > this->get_execGrade())
 		throw Form::Illegal(this->get_name());
-	creat_Shrubbery();
+	try
+	{
+		creat_Shrubbery();
+	}
+	catch(const FileError& e)
+	{
+		cerr << e.what() << endl;
+	}
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
 	cout << "ShrubberyCreationForm::Destructor called." << endl;
+}
+const char *ShrubberyCreationForm::FileError::what() const throw()
+{
+	return ("ShrubberyCreationForm::File could not be opened for writing!");
 }

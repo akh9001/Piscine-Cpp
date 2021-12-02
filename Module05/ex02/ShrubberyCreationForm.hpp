@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:09:36 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/02 18:37:45 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 23:11:57 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ class ShrubberyCreationForm : public Form
 	private:
 		
 	public:
+		class FileError: exception
+		{
+			public :
+				virtual const char *what() const throw();
+		};
 		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(string const &target);
 		ShrubberyCreationForm(ShrubberyCreationForm const &src);

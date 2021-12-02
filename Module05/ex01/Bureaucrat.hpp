@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:46:11 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/26 23:48:56 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/02 23:29:27 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string>
 #define	cout		std::cout
 #define	cin			std::cin
+#define	cerr			std::cerr
 #define	endl		std::endl
 #define	string		std::string
 #define	exception	std::exception
@@ -46,7 +47,7 @@ class Bureaucrat
 		int		getGrade(void) const;
 		void	incrementGrade(void);
 		void	decrementGrade(void);
-		void	signForm(Form const &form);
+		void	signForm(Form &form);
 		~Bureaucrat();
 };
 
