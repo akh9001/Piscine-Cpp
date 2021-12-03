@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 21:38:47 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/02 21:21:33 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/03 02:58:07 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ class Form
 		void	set_target(string const & target);
 		void	beSigned(Bureaucrat &bureaucrat);
 		virtual void	execute(Bureaucrat const & executor) const = 0;
-		~Form(void);
+		virtual ~Form(void);
 };
 
 ostream		&operator<<(ostream &out, const Form &rhs);
