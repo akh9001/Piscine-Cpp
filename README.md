@@ -98,3 +98,5 @@ https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/
 
 # virtual const char* what() const throw():
 throw() means that you promise to the compiler that this function will never allow an exception to be emitted. This is called an exception specification, and (long story short) is useless and possibly misleading.(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c).
+# Pointers to members
+https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c
