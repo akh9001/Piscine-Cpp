@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 00:39:37 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/03 01:40:44 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/03 01:47:53 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ Form	*Intern::makeForm(const string &name, const string &target)
 	};
 	Form	*form;
 	
+	form = nullptr;
 	switch(return_lvl(tab, name))
 	{
 		case PresidentialPardonForm : form = new PresidentialPardonForm::PresidentialPardonForm(target);
@@ -64,6 +65,7 @@ Form	*Intern::makeForm(const string &name, const string &target)
 		default :
 			cout << "[ The requested form is invalid ]" << endl;
 	}
+	return (form);
 }
 
 Intern::~Intern(void)
