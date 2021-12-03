@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 00:39:37 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/03 01:47:53 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/03 03:05:11 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,42 +30,42 @@ Intern &Intern::operator=(Intern const &rhs)
 	return (*this);
 }
 
-int		return_lvl(t_enumToString *tab, string level)
-{
-	int		i;
 
-	i = 0;
-	while (i < 4)
-	{
-		if (level == tab[i].str)
-			return(tab[i].lvl);
-		i++;
-	}
-	return(-1);
+Form	*Intern::clone_PPF(const string &target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+Form	*Intern::clone_RRF(const string &target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+Form	*Intern::clone_SCF(const string &target)
+{
+	return (new ShrubberyCreationForm(target));
 }
 
 Form	*Intern::makeForm(const string &name, const string &target)
 {
-	t_enumToString tab[]= {
-		{PresidentialPardonForm, "PresidentialPardonForm"},
-		{RobotomyRequestForm, "RobotomyRequestForm"},
-		{ShrubberyCreationForm, "ShrubberyCreationForm"},
+	string test[3] = {
+		"PresidentialPardonForm",
+		"RobotomyRequestForm",
+		"ShrubberyCreationForm"
 	};
-	Form	*form;
-	
-	form = nullptr;
-	switch(return_lvl(tab, name))
+	Form* (Intern::*ptr[3]) (const string &) = {
+		&Intern::clone_PPF,
+		&Intern::clone_RRF,
+		&Intern::clone_SCF
+	};
+
+	for (int i = 0; i < 3; i++)
 	{
-		case PresidentialPardonForm : form = new PresidentialPardonForm::PresidentialPardonForm(target);
-					break;
-		case RobotomyRequestForm : form = new RobotomyRequestForm::RobotomyRequestForm(target);
-					break;
-		case ShrubberyCreationForm : form = new ShrubberyCreationForm::ShrubberyCreationForm(target);
-					break;
-		default :
-			cout << "[ The requested form is invalid ]" << endl;
+		if (test[i] == name)
+			return((this->*ptr[i])(target));
 	}
-	return (form);
+	cerr << RED << "[ The requested form is invalid ]" << RESET << endl;
+	return (nullptr);
 }
 
 Intern::~Intern(void)
