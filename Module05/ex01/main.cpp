@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 18:24:38 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/11/27 09:02:28 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/04 12:05:37 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(void)
 	}
 	catch(const exception& e)
 	{
-		std::cerr << RED << e.what() << RESET << endl;
+		cerr << RED << e.what() << RESET << endl;
 	}
 	
 	try
@@ -60,7 +60,7 @@ int main(void)
 	}
 	catch (const exception& e)
 	{
-		std::cerr << RED << e.what() << RESET << endl;
+		cerr << RED << e.what() << RESET << endl;
 	}
 	return (0);
 }
