@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 18:24:38 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/04 12:05:37 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/04 12:24:28 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int main(void)
 	{
 		cout << BOLDCYAN << "Create a Form with grades too high/low.";
 		cout << RESET << endl;
-		Form	F2("test2", 20, 512);
 		Form	F1("test1", -2, 12);
+		Form	F2("test2", 20, 512);
 	}
 	catch(const exception& e)
 	{
@@ -52,11 +52,11 @@ int main(void)
 		Bureaucrat	B3("B3", 28);
 		cout << F3;
 		cout << CYAN << "Test 0" << RESET << endl;
-		F3.beSigned(B1);
+		B1.signForm(F3);
 		cout << CYAN << "Test 1" << RESET << endl;
-		F3.beSigned(B3);
+		B3.signForm(F3);
 		cout << CYAN << "Test 2" << RESET << endl;
-		F3.beSigned(B2);
+		B2.signForm(F3);
 	}
 	catch (const exception& e)
 	{
