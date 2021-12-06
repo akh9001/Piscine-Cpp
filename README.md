@@ -101,9 +101,11 @@ throw() means that you promise to the compiler that this function will never all
 # Pointers to members
 https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c
 
-## I should check it out !
+##  Type Casting ! 
 1. const_cast : https://www.geeksforgeeks.org/const_cast-in-c-type-casting-operators/#
-```#include <iostream>
+```
+//Undefined behavior to modify a value which is initially declared as const. 
+#include <iostream>
 using namespace std;
 
 int fun(int* ptr)
@@ -123,4 +125,10 @@ int main(void)
      cout << "*ptr " << *ptr << "ptr " << ptr << endl;
 	return 0;
 }
+//output
+//20
+//val 10 &var 0x7ffe87171804
+//*ptr 20 ptr 0x7ffe87171804
 ```
+##Volatile keyword 
+https://www.youtube.com/watch?v=6tIWFEzzx9I
