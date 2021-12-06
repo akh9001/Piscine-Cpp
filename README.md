@@ -130,6 +130,14 @@ int main(void)
 //val 10 &var 0x7ffe87171804
 //*ptr 20 ptr 0x7ffe87171804
 ```
-## Volatile keyword 
+## Volatile keyword :
 
 https://www.youtube.com/watch?v=6tIWFEzzx9I
+
+## Make existing code run faster, with compiler optimizations :
+https://www.youtube.com/watch?v=U161zVjv1rs
+https://www.commandlinux.com/man-page/man1/time.1.html
+
+## Learn GDB in 60 seconds
+
+https://www.youtube.com/watch?v=mfmXcbiRs0E
