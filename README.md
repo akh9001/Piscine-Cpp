@@ -141,3 +141,8 @@ https://www.commandlinux.com/man-page/man1/time.1.html
 ## Learn GDB in 60 seconds
 
 https://www.youtube.com/watch?v=mfmXcbiRs0E
+
+## typeid operator :
+
+https://en.cppreference.com/w/cpp/language/typeid
+https://en.cppreference.com/w/cpp/types/type_index : type_names[std::type_index(typeid(i))]
