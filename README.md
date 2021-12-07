@@ -100,3 +100,92 @@ https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/
 throw() means that you promise to the compiler that this function will never allow an exception to be emitted. This is called an exception specification, and (long story short) is useless and possibly misleading.(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c).
 # Pointers to members
 https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c
+
+##  Type Casting ! 
+1. const_cast : https://www.geeksforgeeks.org/const_cast-in-c-type-casting-operators/#
+```
+//Undefined behavior to modify a value which is initially declared as const. 
+#include <iostream>
+using namespace std;
+
+int fun(int* ptr)
+{
+  *ptr += 10;
+	return (*ptr);
+}
+
+int main(void)
+{
+	const int val = 10;
+	const int *ptr = &val;
+	int *ptr1 = (int *)(ptr);
+  
+	cout << fun(ptr1) << endl;
+   cout <<"val "<< val << "&var " << &val << endl;
+     cout << "*ptr " << *ptr << "ptr " << ptr << endl;
+	return 0;
+}
+//output
+//20
+//val 10 &var 0x7ffe87171804
+//*ptr 20 ptr 0x7ffe87171804
+```
+2. static_cast
+https://www.geeksforgeeks.org/static_cast-in-c-type-casting-operators/?ref=lbp
+## Volatile keyword :
+
+https://www.youtube.com/watch?v=6tIWFEzzx9I
+
+## Make existing code run faster, with compiler optimizations :
+https://www.youtube.com/watch?v=U161zVjv1rs
+https://www.commandlinux.com/man-page/man1/time.1.html
+
+## Learn GDB in 60 seconds
+
+https://www.youtube.com/watch?v=mfmXcbiRs0E
+
+## typeid operator :
+
+https://en.cppreference.com/w/cpp/language/typeid
+
+https://en.cppreference.com/w/cpp/types/type_index 
+```
+#include <iostream>
+#include <typeinfo>
+#include <typeindex>
+#include <unordered_map>
+#include <string>
+#include <memory>
+ 
+struct A {
+    virtual ~A() {}
+};
+ 
+struct B : A {};
+struct C : A {};
+ 
+int main()
+{
+    std::unordered_map<std::type_index, std::string> type_names;
+ 
+    type_names[std::type_index(typeid(int))] = "int";
+    type_names[std::type_index(typeid(double))] = "double";
+    type_names[std::type_index(typeid(A))] = "A";
+    type_names[std::type_index(typeid(B))] = "B";
+    type_names[std::type_index(typeid(C))] = "C";
+ 
+    int i;
+    double d;
+    A a;
+ 
+    // note that we're storing pointer to type A
+    std::unique_ptr<A> b(new B);
+    std::unique_ptr<A> c(new C);
+ 
+    std::cout << "i is " << type_names[std::type_index(typeid(i))] << '\n';
+    std::cout << "d is " << type_names[std::type_index(typeid(d))] << '\n';
+    std::cout << "a is " << type_names[std::type_index(typeid(a))] << '\n';
+    std::cout << "*b is " << type_names[std::type_index(typeid(*b))] << '\n';
+    std::cout << "*c is " << type_names[std::type_index(typeid(*c))] << '\n';
+}
+```
