@@ -130,6 +130,8 @@ int main(void)
 //val 10 &var 0x7ffe87171804
 //*ptr 20 ptr 0x7ffe87171804
 ```
+2. static_cast
+https://www.geeksforgeeks.org/static_cast-in-c-type-casting-operators/?ref=lbp
 ## Volatile keyword :
 
 https://www.youtube.com/watch?v=6tIWFEzzx9I
