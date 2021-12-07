@@ -28,7 +28,6 @@ Zombie::~Zombie(void)
 Zombie::Zombie(string name)
 {
 	_name = name;
-	announce();
 	return ;
 }
 

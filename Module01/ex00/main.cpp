@@ -18,9 +18,10 @@ int		main(void)
 
 	// Create a zombie on the heap 
 		zombie = newZombie("Ghoul");
+		zombie->announce();
 	// Createzombie on the stack
-		randomChump("Head");
-	// Delete zombie :
+		randomChump("Headless");
+	// Delete Ghoul zombie :
 	delete zombie;
 	return (0);
 }

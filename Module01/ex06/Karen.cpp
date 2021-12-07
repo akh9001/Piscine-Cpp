@@ -68,11 +68,11 @@ void	Karen::complain(string level)
 	switch(return_lvl(tab, level))
 	{
 		case DEBUG : debug();
-					break;
+					
 		case INFO : info();
-					break;
+
 		case WARNING : warning();
-					break;
+
 		case ERROR : error();
 					break;
 		default :

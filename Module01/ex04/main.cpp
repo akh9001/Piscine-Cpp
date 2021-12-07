@@ -36,7 +36,6 @@ void	ft_replace(string& line, string s1, string s2)
 	length_s2 = s2.length();
 	while ((index = line.find(s1, index)) != npos)
 	{
-		// index = find(line, index);
 		line.erase(index, length_s1);
 		line.insert(index, s2);
 		index = index + length_s2;
