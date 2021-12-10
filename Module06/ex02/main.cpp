@@ -6,20 +6,19 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 16:45:26 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/09 07:34:42 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/10 06:09:45 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "Base.hpp"
 
-Base	* generate(void)
+Base	*generate(void)
 {
-	int		n;
+	int			n;
+	static int	c;
 
 	srand(time(0));
-	n = rand();
+	n = rand() + c++;
 	if (n % 3 == 1)
 	{
 		// cout << "A" << endl;
@@ -70,9 +69,7 @@ void	identify(Base& p)
 			{
 				cout << "Undefined type" << endl;
 			}
-			
 		}
-		
 	}
 }
 

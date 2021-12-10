@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 07:30:05 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/09 07:30:49 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/10 06:05:48 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@
 
 class Base
 {
-	public :
-		virtual ~Base(void);
+  public:
+    virtual ~Base(void);
 };
+
+class A : public Base{};
+class B : public Base{};
+class C : public Base{};
