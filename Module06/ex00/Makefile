@@ -6,11 +6,11 @@
 #    By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 18:09:16 by akhalidy          #+#    #+#              #
-#    Updated: 2021/12/07 18:55:41 by akhalidy         ###   ########.fr        #
+#    Updated: 2021/12/10 05:09:13 by akhalidy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all clean fclean re run
+.PHONY : all clean fclean re
 
 NAME = convert
 

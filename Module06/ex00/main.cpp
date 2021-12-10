@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 18:05:12 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/08 15:21:26 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/10 05:06:01 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	convert_to_char(float f, const char *str)
 	cout << "char	: ";
 	if (!isprint(c))
 	{
-		if (errno == 22)
+		if (errno)
 			s = "impossible";
 		else
 			s = "Non displayable";
@@ -51,10 +51,20 @@ void	convert_to_int(float f, const char *s)
 
 	i = static_cast <int>(f);
 	atoi(s);
-	if (errno == 22)
+	if (errno)
 		cout << "int	: impossible" << endl;
 	else
 		cout << "int	: " << i << endl;
+}
+
+void	print_error(void)
+{
+	cout << WHITE;
+	cerr << "char	: impossible" << endl;
+	cerr << "int	: impossible" << endl;
+	cerr << "float	: impossible" << endl;
+	cerr << "double	: impossible" << endl;
+	exit (1);
 }
 
 int	main(int argc, char **argv)
@@ -70,6 +80,9 @@ int	main(int argc, char **argv)
 	}
 
 	d = atof(argv[1]);
+	if (!d && argv[1][0] != '0')
+		if (argv[1][0]!= '+' && argv[1][0] != '-')
+			print_error();
 	f = static_cast <float>(d);
 	
 	cout << WHITE;
