@@ -191,7 +191,11 @@ int main()
 ```
 ## Dynamic Cast :
 https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
+
 https://www.youtube.com/watch?v=wE4beL95pIo
 ```
-Dynamic Cast: A cast is an operator that converts data from one type to another type. In C++, dynamic casting is mainly used for safe downcasting at run time. To work on dynamic_cast there must be one virtual function in the base class. A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
+Dynamic Cast: A cast is an operator that converts data from one type to another type. 
+In C++, dynamic casting is mainly used for safe downcasting at run time. 
+To work on dynamic_cast there must be one virtual function in the base class.
+A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
 ```
