@@ -199,3 +199,6 @@ In C++, dynamic casting is mainly used for safe downcasting at run time.
 To work on dynamic_cast there must be one virtual function in the base class.
 A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
 ```
+## operator overloading :
+
+https://en.cppreference.com/w/cpp/language/operators
