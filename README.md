@@ -16,7 +16,10 @@
   ```
 ## [Abstract vs Interface](http://www.cplusplus.com/forum/beginner/157568/) :
 ## Upcasting :
-Upcasting is converting a derived-class reference or pointer to a base-class. In other words, upcasting allows us to treat a derived type as though it were its base type. It is always allowed for public inheritance, without an explicit type cast. This is a result of the is-a relationship between the base and derived classes.
+	Upcasting is converting a derived-class reference or pointer to a base-class.
+	In other words, upcasting allows us to treat a derived type as though it were its base type.
+	It is always allowed for public inheritance, without an explicit type cast. 
+	This is a result of the is-a relationship between the base and derived classes.
 ```
 class Parent {
 public:
@@ -69,16 +72,20 @@ int main( )
 ```
 
 ## NULL vs nullptr
-nullptr is a keyword that represents zero as an address (its type is considered a pointer-type), while NULL is the value zero as an int . If you're writing something where you're referring to the zero address, rather than the value zero, you should use nullptr 
+nullptr is a keyword that represents zero as an address (its type is considered a pointer-type), while NULL is the value zero as an int.
+If you're writing something where you're referring to the zero address, rather than the value zero, you should use nullptr 
 ## Exceptions
 Exception handling provides a mechanism to decouple handling of errors or other exceptional circumstances from the typical control flow of your code.
-Using return codes causes your control flow and error flow to be intermingled, constraining both. Exceptions in C++ are implemented using three keywords that work in conjunction with each other: throw, try, and catch.
+Using return codes causes your control flow and error flow to be intermingled, constraining both.
+Exceptions in C++ are implemented using three keywords that work in conjunction with each other: throw, try, and catch.
 The exception caused the execution path to jump immediately to the exception handler.
 __*try :*__ Look for exceptions that occur within try block and route to attached catch block(s).
 https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/
 
 # virtual const char* what() const throw():
-throw() means that you promise to the compiler that this function will never allow an exception to be emitted. This is called an exception specification, and (long story short) is useless and possibly misleading.(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c).
+throw() means that you promise to the compiler that this function will never allow an exception to be emitted. 
+This is called an exception specification, and (long story short) is useless and possibly misleading.
+(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c).
 # [Pointers to members](https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c) :
 
 ##  Type Casting ! 
@@ -177,7 +184,8 @@ A dynamic_cast works only polymorphic base class because it uses this informatio
 
 ## [container](https://www.geeksforgeeks.org/containers-cpp-stl/):
 ```
-A container is a holder object that stores a collection of other objects (its elements). They are implemented as class templates, which allows great flexibility in the types supported as elements. 
-
-The container manages the storage space for its elements and provides member functions to access them, either directly or through iterators (reference objects with similar properties to pointers). 
+A container is a holder object that stores a collection of other objects (its elements).
+They are implemented as class templates, which allows great flexibility in the types supported as elements. 
+The container manages the storage space for its elements and provides member functions to access them, 
+either directly or through iterators (reference objects with similar properties to pointers). 
 ```
