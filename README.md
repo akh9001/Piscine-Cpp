@@ -76,11 +76,11 @@ int main( )
 	rather than the value zero, you should use nullptr 
 ## Exceptions
 	Exception handling provides a mechanism to decouple handling of errors or other exceptional circumstances
-	from the typical control flow of your code. Using return codes causes your control flow and error flow to be intermingled,
-	constraining both.
-	Exceptions in C++ are implemented using three keywords that work in conjunction with each other: throw, try, and catch.
-	The exception caused the execution path to jump immediately to the exception handler.
-	__*try :*__ Look for exceptions that occur within try block and route to attached catch block(s).
+	from the typical control flow of your code. Using return codes causes your control flow and error flow
+	to be intermingled, constraining both.
+	Exceptions in C++ are implemented using three keywords that work in conjunction with each other: throw, try,
+	and catch. The exception caused the execution path to jump immediately to the exception handler.
+	try : Look for exceptions that occur within try block and route to attached catch block(s).
 https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/
 
 # virtual const char* what() const throw():
