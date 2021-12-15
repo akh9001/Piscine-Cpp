@@ -1,38 +1,21 @@
 # Piscine-C++
 
-## FOrward declaration :
-https://www.incredibuild.com/blog/optimizing-cpp-header-files
-## How to check empty file in c++
-https://www.cplusplus.com/reference/istream/istream/peek/
-## *this vs this in C++
-https://stackoverflow.com/questions/2750316/this-vs-this-in-c
-## Correction sheets :
-https://drive.google.com/drive/folders/1PM3IT0WQvfun8mtkbHisuIDjmH-gADWJ
-## My reference in C++:
-https://www.learncpp.com/
-## Shifting (module 02)
-https://www.geeksforgeeks.org/left-shift-right-shift-operators-c-cpp/
-## Fixed point to float :
-https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
-
-## Inheritance : (chapter 17 & 18)
-https://www.learncpp.com/cpp-tutorial/introduction-to-inheritance/
-
-## Pure Virtual Functions and Abstract Classes in C++ :
-https://www.tutorialspoint.com/pure-virtual-functions-and-abstract-classes-in-cplusplus
-
-## The Four Polymorphisms in C++ :
-https://catonmat.net/cpp-polymorphism
-
-## Interfaces :
+## [Forward declaration](https://www.incredibuild.com/blog/optimizing-cpp-header-files) :
+## [How to check empty file in c++](https://www.cplusplus.com/reference/istream/istream/peek/):
+## [*this vs this in C++](https://stackoverflow.com/questions/2750316/this-vs-this-in-c):
+## [Correction sheets](https://drive.google.com/drive/folders/1PM3IT0WQvfun8mtkbHisuIDjmH-gADWJ) :
+## [My reference in C++](https://www.learncpp.com/):
+## [Shifting (module 02)](https://www.geeksforgeeks.org/left-shift-right-shift-operators-c-cpp/):
+## [Fixed point to float](https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/):
+## [Inheritance : (chapter 17 & 18)](https://www.learncpp.com/cpp-tutorial/introduction-to-inheritance/):
+## [Pure Virtual Functions and Abstract Classes in C++](https://www.tutorialspoint.com/pure-virtual-functions-and-abstract-classes-in-cplusplus) :
+## [The Four Polymorphisms in C++](https://catonmat.net/cpp-polymorphism) :
+## [Interfaces](https://www.tutorialspoint.com/cplusplus/cpp_interfaces.htm) :
+  ```
   An object-oriented system might use an abstract base class to provide a common and standardized interface appropriate for all the external applications.
-  
-https://www.tutorialspoint.com/cplusplus/cpp_interfaces.htm
-
-## Abstract vs Interface :
-http://www.cplusplus.com/forum/beginner/157568/
-
-## Upcasting
+  ```
+## [Abstract vs Interface](http://www.cplusplus.com/forum/beginner/157568/) :
+## Upcasting :
 Upcasting is converting a derived-class reference or pointer to a base-class. In other words, upcasting allows us to treat a derived type as though it were its base type. It is always allowed for public inheritance, without an explicit type cast. This is a result of the is-a relationship between the base and derived classes.
 ```
 class Parent {
@@ -62,11 +45,9 @@ int main( )
   return 0; 
 }
 ```
-## Virtual destructor :
-https://www.geeksforgeeks.org/virtual-destructor/
+## [Virtual destructor](https://www.geeksforgeeks.org/virtual-destructor/):
 
-## Colored output in C++ :
-https://stackoverflow.com/questions/9158150/colored-output-in-c
+## [Colored output in C++](https://stackoverflow.com/questions/9158150/colored-output-in-c):
 ```
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
@@ -98,11 +79,10 @@ https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/
 
 # virtual const char* what() const throw():
 throw() means that you promise to the compiler that this function will never allow an exception to be emitted. This is called an exception specification, and (long story short) is useless and possibly misleading.(https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c).
-# Pointers to members
-https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c
+# [Pointers to members](https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c) :
 
 ##  Type Casting ! 
-1. const_cast : https://www.geeksforgeeks.org/const_cast-in-c-type-casting-operators/#
+1. [const_cast](https://www.geeksforgeeks.org/const_cast-in-c-type-casting-operators/#) :
 ```
 //Undefined behavior to modify a value which is initially declared as const. 
 #include <iostream>
@@ -130,19 +110,13 @@ int main(void)
 //val 10 &var 0x7ffe87171804
 //*ptr 20 ptr 0x7ffe87171804
 ```
-2. static_cast
-https://www.geeksforgeeks.org/static_cast-in-c-type-casting-operators/?ref=lbp
-## Volatile keyword :
-
-https://www.youtube.com/watch?v=6tIWFEzzx9I
-
+2. [static_cast](https://www.geeksforgeeks.org/static_cast-in-c-type-casting-operators/?ref=lbp) :
+## [Volatile keyword](https://www.youtube.com/watch?v=6tIWFEzzx9I) :
 ## Make existing code run faster, with compiler optimizations :
 https://www.youtube.com/watch?v=U161zVjv1rs
 https://www.commandlinux.com/man-page/man1/time.1.html
 
-## Learn GDB in 60 seconds
-
-https://www.youtube.com/watch?v=mfmXcbiRs0E
+## [Learn GDB in 60 seconds](https://www.youtube.com/watch?v=mfmXcbiRs0E):
 
 ## typeid operator :
 
@@ -189,9 +163,7 @@ int main()
     std::cout << "*c is " << type_names[std::type_index(typeid(*c))] << '\n';
 }
 ```
-## Dynamic Cast :
-https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
-
+## [Dynamic Cast](https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/):
 https://www.youtube.com/watch?v=wE4beL95pIo
 ```
 Dynamic Cast: A cast is an operator that converts data from one type to another type. 
@@ -199,12 +171,9 @@ In C++, dynamic casting is mainly used for safe downcasting at run time.
 To work on dynamic_cast there must be one virtual function in the base class.
 A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
 ```
-## operator overloading :
+## [operator overloading](https://en.cppreference.com/w/cpp/language/operators):
 
-https://en.cppreference.com/w/cpp/language/operators
-
-## Reference :
-https://www.geeksforgeeks.org/references-in-c/
+## [Reference](https://www.geeksforgeeks.org/references-in-c/) :
 
 ## [container](https://www.geeksforgeeks.org/containers-cpp-stl/):
 ```
