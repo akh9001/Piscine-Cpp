@@ -6,13 +6,13 @@
 #    By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 03:27:30 by akhalidy          #+#    #+#              #
-#    Updated: 2021/12/15 17:01:48 by akhalidy         ###   ########.fr        #
+#    Updated: 2021/12/15 19:53:53 by akhalidy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all clean fclean re run
 
-NAME = ex01
+NAME = ex00
 
 SRCS = main.cpp
 
