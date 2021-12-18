@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 19:56:14 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/18 08:12:11 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:38:55 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Span &Span::operator=(Span const &rhs)
 
 void Span::addNumber(int number)
 {
-	if (_v.size() > _N)
+	if (_v.size() == _N)
 		throw (LimitExceeded());
 	_v.push_back(number);
 }

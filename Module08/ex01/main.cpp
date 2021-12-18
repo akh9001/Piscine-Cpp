@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 11:44:28 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/18 08:21:52 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:41:19 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int main()
 	{
 		Span	sp(2);
 		
-		sp.addNumber(0);
 		sp.addNumber(0);
 		sp.addNumber(0);
 		sp.addNumber(0);
