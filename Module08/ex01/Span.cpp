@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 19:56:14 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/16 18:56:03 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/18 08:12:11 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 Span::Span(void) : _N(0) {}
 
-Span::Span(unsigned int N) : _N(N) {}
+Span::Span(unsigned int N) : _N(N)
+{
+	_v.reserve(_N);
+}
 
 Span::Span(Span const &src)
 {
@@ -80,9 +83,23 @@ int  Span::longestSpan(void)
 	return (longestSpan);
 }
 
-std::vector<int>	Span::get_v() const
+vect	Span::get_v() const
 {
 	return (_v);
+}
+
+void	Span::set_vect(int arr[], int N)
+{
+	std::vector<int>	v(arr, arr + N);
+	_v = v;
+}
+
+void	Span::print_vect(void)
+{
+	vect::iterator	it;
+	
+	for(it = _v.begin(); it != _v.end(); it++)
+		std::cout << *it << std::endl;
 }
 
 Span::~Span(){}
