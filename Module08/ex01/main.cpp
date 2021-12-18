@@ -6,13 +6,26 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 11:44:28 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/18 08:11:49 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/18 08:21:52 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 int main()
 {
+	//Subject test
+	{
+		Span sp = Span(5);
+
+		sp.addNumber(5);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	
 	// Trying to add n elements which is greater than the size of the array :
 	try
 	{
