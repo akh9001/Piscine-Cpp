@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:50:50 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/12/16 09:04:22 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:24:40 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	easyfind(T v, int value)
     typename T::iterator it;
 
 	it = find (v.begin(), v.end(), value);
-	dst = std::distance(v.begin(), v.end());
+	dst = std::distance(v.begin(), it);
 	if (dst < v.size())
 		return (dst);
 	throw(NotFound());
