@@ -191,3 +191,4 @@ The container manages the storage space for its elements and provides member fun
 either directly or through iterators (reference objects with similar properties to pointers). 
 ```
 ## [Iterators](https://www.geeksforgeeks.org/introduction-iterators-c/#:~:text=An%20iterator%20is%20an%20object,that%20particular%20location%20using%20them.) :
+## [Binding](https://www.geeksforgeeks.org/early-binding-late-binding-c/#:~:text=Binding%20refers%20to%20the%20process%20of%20converting%20identifiers%20(such%20as%20variable%20and%20performance%20names)%20into%20addresses.)
